@@ -3,98 +3,168 @@
 %*********************************** First Chapter *****************************
 %*******************************************************************************
 
-\chapter{Getting started}  %Title of the First Chapter
+\chapter{Trigger Efficiency measurement}  %Title of the First Chapter
 
-\ifpdf
-    \graphicspath{{Chapter1/Figs/Raster/}{Chapter1/Figs/PDF/}{Chapter1/Figs/}}
-\else
-    \graphicspath{{Chapter1/Figs/Vector/}{Chapter1/Figs/}}
-\fi
+The uncertainty on the trigger efficiency determination has been one of the dominant systematic uncertainties in \sttbar measurements.
+Consequently, measuring the trigger efficiency with the highest possible precision is an important part of improving the precision of these
+measurements.
+
+This chapter describes the trigger selection used in this measurement and how this selection can already help to improve
+the later efficiency measurement (see Section \ref{sec:TriggerSel}). It is further explained how the efficiency of this trigger selection is measured and
+show the results for this measurement (see Section \ref{sec:TriggerMetMethod}). In order to estimate the precision of this measurement the trigger efficiency
+is also measured with another method (see Section \ref{sec:TriggerTPMethod}). The two results are finally compared and the chapter concludes with defining the uncertainty
+of the trigger efficiency measurement (see Section \ref{sec:TriggerComp}). 
+
 
 
 %********************************** %First Section  **************************************
-\section{What is loren ipsum? Title with math \texorpdfstring{$\sigma$}{[sigma]}} %Section - 1.1 
+\section{Trigger Selection} %Section - 1.1 
+\label{sec:TriggerSel}
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry (see 
-Section~\ref{section1.3}). Lorem Ipsum~\citep{Aup91} has been the industry's 
-standard dummy text ever since the 1500s, when an unknown printer took a galley 
-of type and scrambled it to make a type specimen book. It has survived not only 
-five centuries, but also the leap into electronic typesetting, remaining 
-essentially unchanged. It was popularised in the 1960s with the release of 
-Letraset sheets containing Lorem Ipsum passages, and more recently with desktop 
-publishing software like Aldus PageMaker including versions of Lorem 
-Ipsum~\citep{AAB95,Con90,LM65}.
+The trigger selection is optimized for maximum efficiency. Because of the statistical properties of the binomial distribution a higher efficiency
+leads to a lower uncertainty. The efficiency itself is measured with respect to the final reconstruced (alsso called offline) objects (see Section XX for details
+on this reconstruction).
 
-The most famous equation in the world: $E^2 = (m_0c^2)^2 + (pc)^2$, which is 
-known as the \textbf{energy-mass-momentum} relation as an in-line equation.
+For a di-lepton selection the starting point are of course the di-lepton triggers. There are different triggers depending on the flavor of each of the
+two leptons. These triggers typically have assymetric cuts on the \pt of the two leptons, so the leading lepton has a significantly higher pt requirement than
+the trailing lepton. In general the quantities reconstructed for the trigger are slightly different from the objects used in the offline analysis. This
+leads to an in-efficiency of the trigger compared to the offline selection close to the kinematic requirements for the trigger objects.
 
-A {\em \LaTeX{} class file}\index{\LaTeX{} class file@LaTeX class file} is a file, which holds style information for a particular \LaTeX{}.
+In the case of the di-lepton trigger this mainly effects the efficiency at the two \pt cut-offs for the leptons. One way to mitigate this is to
+require a higher offline \pt for the leptons than is required by the trigger \todo{Ref to selection}.
+Another way to reduce this inefficiency is to combine the di-lepton trigger with other triggers which only depend on one lepton, mitigating any
+influence of the second lepton. This leads to a combination of di-lepton and single lepton triggers with a logical "or".
+In general only unprescaled triggers are used in this analysis.
+
+This combination increases the trigger efficiency by $\sim 10 \; \%$ compared to onyl using the di-lepton trigger.
+This is shown in Figure \ref{fig:TriggerSel} for a dataset taken in 2016 in Run B to F.
+
+\begin{figure}[htbp!]
+  \begin{center}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/Trigger_pt_nosilep.png}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/Trigger_eta_nosilep.png}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/Trigger_pt.png}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/Trigger_eta.png}}
+      \caption{Efficiencies of the trigger selection in the \emu channel for simulation and data and the corresponding scale factor. The top row shows the efficiency when using dilepton triggers only, while the bottom row shows
+      the efficiency for a combination of dilepton and single lepton triggers. The left row shows the efficiency depending on the \pt of the leading lepton. The right column shows the efficiency depending on the $\eta$ of the leading lepton. }  
+       \label{fig:TriggerSel}
+  \end{center}
+\end{figure}
 
 
-\begin{align}
-CIF: \hspace*{5mm}F_0^j(a) = \frac{1}{2\pi \iota} \oint_{\gamma} \frac{F_0^j(z)}{z - a} dz
-\end{align}
+The final trigger selection is a bit more complicated because we aim to take unprescaled triggers with the most relaxed requirements possible.
+This results in the trigger selection shown in Table \ref{tab:triggerSel} for each of the three di-lepton channels.
+Double counting events is prevented by explicitly requiring triggers on their respective dataset, but vetoing them on the other datasets.
 
-\nomenclature[z-cif]{$CIF$}{Cauchy's Integral Formula}                                % first letter Z is for Acronyms 
-\nomenclature[a-F]{$F$}{complex function}                                                   % first letter A is for Roman symbols
-\nomenclature[g-p]{$\pi$}{ $\simeq 3.14\ldots$}                                             % first letter G is for Greek Symbols
-\nomenclature[g-i]{$\iota$}{unit imaginary number $\sqrt{-1}$}                      % first letter G is for Greek Symbols
-\nomenclature[g-g]{$\gamma$}{a simply closed curve on a complex plane}  % first letter G is for Greek Symbols
-\nomenclature[x-i]{$\oint_\gamma$}{integration around a curve $\gamma$} % first letter X is for Other Symbols
-\nomenclature[r-j]{$j$}{superscript index}                                                       % first letter R is for superscripts
-\nomenclature[s-0]{$0$}{subscript index}                                                        % first letter S is for subscripts
+ \begin{table}[hbt]
+    \centering
+    \caption{The trigger selection that is applied on data. It can differ between the different run periods because of changing prescales.}
+    \label{tab:triggerSel}
+     \begin{tabular}
+            {c|c|c}
+            channel & run & trigger \\
+            \hline
+             \mumu & B-G & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL \\
+              & B-G & HLT\_Mu17\_TrkIsoVVL\_TkMu8\_TrkIsoVVL \\
+              & H & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ \\
+              & H & HLT\_Mu17\_TrkIsoVVL\_TkMu8\_TrkIsoVVL\_DZ \\
+              & B-H & HLT\_IsoMu24 \\
+              & B-H & HLT\_IsoTkMu24 \\
+            \hline
+             \ee &  B-H & HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ \\
+              &  B-H & HLT\_Ele27\_WPTight\_Gsf \\
+            \hline
+             \empm & B-G & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL \\
+              & B-G & HLT\_Mu8\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL \\
+              & H & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ \\
+              & H & HLT\_Mu8\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_DZ \\
+              & B-H & HLT\_Ele27\_WPTight\_Gsf \\
+              & B-H & HLT\_IsoMu24 \\
+              & B-H & HLT\_IsoTkMu24 \\
+    \end{tabular}
+\end{table}
+
+
+
+
+
 
 
 %********************************** %Second Section  *************************************
-\section{Why do we use loren ipsum?} %Section - 1.2
+\section{Method: Independent Triggers} %Section - 1.2
+\label{sec:TriggerMetMethod}
 
+In this analysis the trigger efficiency is mainly measured using a dataset taken with an orthogonal trigger selection.
+In general this allows to measure the trigger efficiency without bias with the same method in data and simulation independently 
+of each other. It is important that these independent triggers are indeed as independent from the dilepton triggers as possible
+and for simplicity they should also be unprescaled in the full run range.
 
-It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using `Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for `lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+Here triggers based on missing transverse energy (\ETm) are used. They are especially usefull for a \ttbar analysis, 
+as dileptonic \ttbar events should produce \ETm due to the two neutrinos. This allows to measure the trigger efficiency for data
+in an event sample which at least contains \ttbar events. The efficiency in simulation can be measured on a sample of \ttbar events.
+
+The trigger efficiency is then measured according to the formula given in Equation \ref{eq:TriggerEff}, where $N$ denotes the number of 
+events fullfilling the given requirements.
+
+\begin{equation}
+\varepsilon_{trig} = \frac{N(\mathrm{Offline Selection + \ETm \; Trigger + Measured Trigger})}{N(\mathrm{Offline Selection + \ETm \; Trigger})}
+\label{eq:TriggerEff}
+\end{equation}
+
+The efficiency is measured for each event, consequently the resulting scale factors to be applied on simulation to correct to data are applied per event as well.
+This is especially useful if a combination of multiple triggers is used in the selection.
+
+The statistical uncertainty is calculated assuming a binomial distribution using the Clopper-Pearson method \todo{cit PDG}. It offers at least nominal coverage 
+of the given confidence level and preesents the conservative option to estimate these uncertainties. 
+
+Results for efficiencies and scale factors for the \ee, \mumu and \emu channel are shown in figures \ref{fig:MET_ee},\ref{fig:MET_mumu} and \ref{fig:MET_emu} respectively.
+
+\begin{figure}[htbp!]
+  \begin{center}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/ee/leading_eta}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/ee/seleading_eta}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/ee/leading_pt}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/ee/seleading_pt}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/ee/jet_multi}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/ee/vertex_multi}}  
+      \caption{Efficiencies of the trigger selection in the \ee channel for simulation and data and the corresponding scale factor. The top row shows the efficiency depending on $\eta$ of the leading (left) and trailing (right) lepton. The middle row shows the effciency \pt of the leading (left) and trailing (right) lepton. The bottom rwo shows the efficiency depending on the jet multiplicity on the left and the vertex multiplicity on the right.
+       The error bars denote statistical uncertainties. }  
+      
+    \label{fig:MET_ee}
+  \end{center}
+\end{figure}
+
+\begin{figure}[htbp!]
+  \begin{center}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/mumu/leading_eta}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/mumu/seleading_eta}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/mumu/leading_pt}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/mumu/seleading_pt}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/mumu/jet_multi}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/mumu/vertex_multi}}  
+      \caption{Efficiencies of the trigger selection in the \mumu channel for simulation and data and the corresponding scale factor. The top row shows the efficiency depending on $\eta$ of the leading (left) and trailing (right) lepton. The middle row shows the effciency \pt of the leading (left) and trailing (right) lepton. The bottom rwo shows the efficiency depending on the jet multiplicity on the left and the vertex multiplicity on the right.
+      The error bars denote statistical uncertainties. }  
+      
+    \label{fig:MET_mumu}
+  \end{center}
+\end{figure}
+
+\begin{figure}[htbp!]
+  \begin{center}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/emu/leading_eta}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/emu/seleading_eta}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/emu/leading_pt}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/emu/seleading_pt}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/emu/jet_multi}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/emu/vertex_multi}}  
+      \caption{Efficiencies of the trigger selection in the \emu channel for simulation and data and the corresponding scale factor. The top row shows the efficiency depending on $\eta$ of the leading (left) and trailing (right) lepton. The middle row shows the effciency \pt of the leading (left) and trailing (right) lepton. The bottom rwo shows the efficiency depending on the jet multiplicity on the left and the vertex multiplicity on the right.
+      The error bars denote statistical uncertainties. }  
+      
+    \label{fig:MET_emu}
+  \end{center}
+\end{figure}
+
 
 %********************************** % Third Section  *************************************
 \section{Where does it come from?}  %Section - 1.3 
 \label{section1.3}
-
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from ``de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham
-
-``Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-
-Section 1.10.32 of ``de Finibus Bonorum et Malorum", written by Cicero in 45 BC: ``Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-
-1914 translation by H. Rackham: ``But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
-
-Section 1.10.33 of ``de Finibus Bonorum et Malorum", written by Cicero in 45 BC: ``At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
-
-1914 translation by H. Rackham: ``On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."
-
-\nomenclature[z-DEM]{DEM}{Discrete Element Method}
-\nomenclature[z-FEM]{FEM}{Finite Element Method}
-\nomenclature[z-PFEM]{PFEM}{Particle Finite Element Method}
-\nomenclature[z-FVM]{FVM}{Finite Volume Method}
-\nomenclature[z-BEM]{BEM}{Boundary Element Method}
-\nomenclature[z-MPM]{MPM}{Material Point Method}
-\nomenclature[z-LBM]{LBM}{Lattice Boltzmann Method}
-\nomenclature[z-MRT]{MRT}{Multi-Relaxation 
-Time}
-\nomenclature[z-RVE]{RVE}{Representative Elemental Volume}
-\nomenclature[z-GPU]{GPU}{Graphics Processing Unit}
-\nomenclature[z-SH]{SH}{Savage Hutter}
-\nomenclature[z-CFD]{CFD}{Computational Fluid Dynamics}
-\nomenclature[z-LES]{LES}{Large Eddy Simulation}
-\nomenclature[z-FLOP]{FLOP}{Floating Point Operations}
-\nomenclature[z-ALU]{ALU}{Arithmetic Logic Unit}
-\nomenclature[z-FPU]{FPU}{Floating Point Unit}
-\nomenclature[z-SM]{SM}{Streaming Multiprocessors}
-\nomenclature[z-PCI]{PCI}{Peripheral Component Interconnect}
-\nomenclature[z-CK]{CK}{Carman - Kozeny}
-\nomenclature[z-CD]{CD}{Contact Dynamics}
-\nomenclature[z-DNS]{DNS}{Direct Numerical Simulation}
-\nomenclature[z-EFG]{EFG}{Element-Free Galerkin}
-\nomenclature[z-PIC]{PIC}{Particle-in-cell}
-\nomenclature[z-USF]{USF}{Update Stress First}
-\nomenclature[z-USL]{USL}{Update Stress Last}
-\nomenclature[s-crit]{crit}{Critical state}
-\nomenclature[z-DKT]{DKT}{Draft Kiss Tumble}
-\nomenclature[z-PPC]{PPC}{Particles per cell}

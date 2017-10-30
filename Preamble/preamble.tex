@@ -23,6 +23,7 @@
 % Add `customfont' in the document class option to use this section
 
 \ifsetCustomFont
+  \usepackage{txfonts}
   % Set your custom font here and use `customfont' in options. Leave empty to
   % load computer modern font (default LaTeX font).
   %\RequirePackage{helvet}
@@ -189,3 +190,96 @@
 %\fi
 
 % Example todo: \mynote{Hey! I have a note}
+
+% ************Custom definitions
+%\usepackage{txfonts}
+%\usepackage{fontspec}
+%\setmainfont[Path=/usr/share/fonts/truetype/calibri/,
+%    BoldItalicFont=CalibriBI.ttf,
+%    BoldFont      =CalibriB.ttf,
+%    ItalicFont    =CalibriI.ttf]{Calibri.ttf}
+\usepackage{xspace}
+\usepackage{amsmath}
+\usepackage{sty/ptdr-definitions}
+
+
+\newcommand\todo[1]{\textbf{#1}}
+\newcommand{\metxy}{\ensuremath{E\!\!\!\!/_\text{x,y}}}
+\newcommand{\sttbar}{\ensuremath{\sigma_{\ttbar}}\xspace}
+\newcommand{\sttvis}{\ensuremath{\sigma_{\ttbar,\mathrm{vis}}\xspace}}
+\newcommand{\mtt}{\ensuremath{m_{\ttbar}}\xspace}
+\newcommand{\mtop}{\ensuremath{m_{\mathrm top}}\xspace}
+\newcommand{\Wjets}{W+jets\xspace}
+\newcommand{\Zjets}{Z+jets\xspace}
+\newcommand{\ejets}{e+jets\xspace}
+\newcommand{\mujets}{$\mu$+jets\xspace}
+\newcommand{\ljets}{$\ell$+jets\xspace}
+\newcommand{\mumu}{$\mu^+\mu^-$\xspace}
+\newcommand{\ee}{$\mathrm{e^+e^-}$\xspace}
+\newcommand{\mue}{$\mu^{\pm}\mathrm{e^{\mp}}$\xspace}
+\newcommand{\pb}{\mbox{\ensuremath{\,\text{pb}}}\xspace}
+\newcommand{\Pythia} {{\textsc{Pythia}}\xspace} %%%%%%%%%%%%%
+\newcommand{\Powheg} {{\textsc{Powheg}}\xspace} %%%%%%%%%%%%%
+\newcommand{\Herwig} {{\textsc{Herwig}}\xspace} %%%%%%%%%%%%%
+\newcommand{\Herwigpp} {{\textsc{Herwig++}}\xspace} %%%%%%%%%%%%%
+\newcommand{\MadSpin} {{\textsc{MadSpin}}\xspace} %%%%%%%%%%%%%
+\newcommand{\MGaMCatNLO} {{\textsc{MG5\_aMC@NLO}}\xspace} %%%%%%%%%%%%%
+\newcommand{\eepm}{\ensuremath{\Pep\Pem}}
+\newcommand{\mmpm}{\ensuremath{\Pgmp \Pgmm}}
+\newcommand{\ttpm}{\ensuremath{\Pgt^+ \Pgt^-}}
+\newcommand{\empm}{\ensuremath{\Pepm \PGm^\mp}}
+\newcommand{\pp}{\ensuremath{\Pp\Pp}}
+\newcommand{\ppbar}{\ensuremath{\Pp\Pap}}
+\newcommand{\ase}[2]{\ensuremath{_{~- #1}^{~+ #2}}}
+\newcommand{\roots}{\ensuremath{\sqrt{s}}}
+\newcommand{\lhcE}[1]{\ensuremath{\roots ={#1}~\TeV}}
+%\newcommand{\PZ}{\ensuremath{\mathrm{Z}}}
+\newcommand{\dy}{\ensuremath{\PZ/\Pgg^\star}}
+\newcommand{\dyee}{\ensuremath{\dy\to\eepm}}
+\newcommand{\dymm}{\ensuremath{\dy\to\mmpm}}
+\newcommand{\dytt}{\ensuremath{\dy\to\ttpm}}
+\newcommand{\mll}{\ensuremath{M_{\ell\ell}}}
+\def\mrm{\mathrm}
+\newcommand{\isocomb}{\ensuremath{I_\mrm{comb}}}
+\newcommand{\WoZ}{\ensuremath{\PW/\PZ}}
+\providecommand{\POWHEG} {\textsc{Powheg}\xspace}
+\providecommand{\PYTHIA} {\textsc{Pythia}\xspace}
+\providecommand{\HERWIGPP} {\textsc{Herwig++}\xspace}
+\newcommand{\tW}{\ensuremath{\mathrm{t}\PW}}
+\newcommand{\VV}{\ensuremath{\mathrm{VV}}}
+\newcommand{\ns}{\ensuremath{\mrm{ns}}}
+\newcommand{\wmn}{\ensuremath{\PW\to\Pgm\Pgngm}}
+\newcommand{\met} {\ensuremath{E\!\!\!\!/_T}}
+\renewcommand{\MET}{\mbox{$\not \!\! E_T$}}
+\newcommand{\pythia}{{\sc{Pythia}}}
+\renewcommand{\ttbar}{\ensuremath{t\bar{t}}\xspace}
+\newcommand{\invpb}{pb$^{-1}$}
+\newcommand{\geVcc}{GeV}
+\providecommand{\ee}{\ensuremath{ee}\xspace}
+\newcommand{\emu}{\ensuremath{\mathrm{e}\mu}\xspace}
+\newcommand{\mev}{\ensuremath{\mathrm{\;MeV}}\xspace}
+\newcommand{\tev}{\ensuremath{\mathrm{\;TeV}}\xspace}
+\newcommand{\mevc}{\ensuremath{\mathrm{\;MeV}}\xspace}
+\newcommand{\gevc}{\ensuremath{\mathrm{\;GeV}}\xspace}
+\newcommand{\kevcc}{\ensuremath{\mathrm{\;keV}}\xspace}
+\newcommand{\mevcc}{\ensuremath{\mathrm{\;MeV}}\xspace}
+\newcommand{\gevcc}{\ensuremath{\mathrm{\;GeV}}\xspace}
+%%% analysis results 
+\newcommand{\resultxsecmain}{\ensuremath{842 pb \pm  2 ({\rm stat}) \pm 22 ({\rm syst}) \pm 21 ({\rm lumi}) \pb}\xspace}
+\newcommand{\resultxsecvismain}{\ensuremath{21.00 \pm 0.04 ({\rm stat}) \pm 0.53 ({\rm syst}) \pm 0.52({\rm lumi})\pb}\xspace}
+\newcommand{\uncertaintytotmain}{\ensuremath{21 \pb~(3.55\%)}\xspace}
+\newcommand{\xsectheo}{\ensuremath{ 832 \pm^{20}_{29} {\rm (scale)} \pm 35({\rm PDF}+\alpha_s) \pb}\xspace}
+
+\newcommand{\lumiv}{35.9 fb$^{-1}$}
+\newcommand{\lumivwunc}{35.9 $\pm$ 0.9 fb$^{-1}$}
+
+\newcommand{\as}{\ensuremath{\alpha_\mathrm{S}}\xspace}
+\newcommand{\asq}{\ensuremath{\alpha_\mathrm{S}(Q)}\xspace}
+\newcommand{\asmz}{\ensuremath{\alpha_\mathrm{S}(m_Z)}\xspace}
+\newcommand{\mur}{\ensuremath{\mu_\mathrm{r}}\xspace}
+\newcommand{\muf}{\ensuremath{\mu_\mathrm{f}}\xspace}
+\newcommand{\stt}{\ensuremath{\sigma_\mathrm{t\bar{t}}}\xspace}
+\newcommand{\msbar}{\ensuremath{\mathrm{\overline{MS}}}\xspace}
+\newcommand{\mtmt}{\ensuremath{m_\mathrm{t}(m_\mathrm{t})}\xspace}
+\newcommand{\mtp}{\ensuremath{m_\mathrm{t}^{\mathrm{pole}}}\xspace}
+
