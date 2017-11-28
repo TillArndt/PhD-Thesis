@@ -172,4 +172,51 @@ Results for efficiencies and scale factors for the \ee, \mumu and \emu channel a
 In order to provide an alternative and totally independent trigger efficiency measurement the Tag and Probe method is used.
 Here the trigger efficiency can be measured independently in data and simulation by using the decay of the Z-boson into two leptons.
 
-In general one of the leptons (the Tag) is required to pass a tight selection. This selection includes matching the offline lepton to the lepton reconstructed at trigger level by requiring the two to have a maximum distance and difference in \pt. The second lepton (the Probe) is only required to pass a very loose selection, so it should be as unbiased as possible. The invariant mass of the two leptons then needs to be within the Z-mass window, in which case it can be assumed that the second lepton is indeed a real lepton and not a fake.
+In general one of the leptons (the Tag) is required to pass a tight selection. This selection includes matching the offline lepton to the lepton reconstructed at trigger level by requiring the two to have a maximum distance and difference in \pt. The second lepton (the Probe) is only required to pass a very loose selection, so it should be as unbiased as possible. The invariant mass of the two leptons then needs to be within the Z-mass window, in which case it can generally be assumed that the second lepton is a real lepton and not a fake.
+In order to measure the efficiency of a certain requirement the probe can then either fullfill it ("passing probe") or fail it ("failing probe"). The efficiency is then determined by dividing the number of passing probes by all probes.
+
+A residual fake contamination is determined by fitting both background and signal distributions for passing and failing probes. The background distribution is often described by an exponential function. The signal has a more complicated functional form, it can for example be parametrized by a double voigtian function. When the efficiency is measured on data it is also possible to fit templates from MC.
+In contrast for the efficiency determination in simulation a fit is sometimes not needed as the fake contamination can be negligible.
+
+The efficiency can also be measured differential depending on kinematic properties of the lepton. It commonly depends on both the $\eta$ and the \pt of the lepton. 
+
+In contrast to the efficiency measurement using orthogonal triggers (see Section \ref{sec:TriggerMetMethod}) the Tag and Probe measurement depends on the lepton itself. It measures the efficiency for each lepton, consequently several measurements have to be combined for a multi lepton trigger or an efficiency measurement with multiple triggers (see Section \ref{sec:TriggerComp}). 
+
+Examples for the efficiency measurement in one bin as well as the overall scale factor for the muonic part ("muon leg") of the HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL trigger both for data and simulation and the resulting overall scale factors are shown in Figure \ref{fig:TP_Mu23}.
+
+\begin{figure}[htbp!]
+  \begin{center}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/TaP/Mu23_data_fits}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/TaP/Mu23_MC_fits}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/TaP/Mu23_sf}}
+      \caption{Results of the trigger efficiency measurement with the Tag and Probe method for the Mu23 trigger leg. The upper row shows the measurement for one bin for each data (left) and simulation (right). The lower row shows 
+       the scale factor between data and simulation binned in $\eta$ and \pt. }  
+    \label{fig:TP_Mu23}
+  \end{center}
+\end{figure}
+
+For the efficiency measurement the electron part ("electron leg") of the HLT\_Mu8\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL trigger for data and simulation and the corresponding scale factors sre shown in Figure \ref{fig:TP_Ele23}.
+Here the efficiency on simulation is not determined with a fit, but by counting the events.
+
+\begin{figure}[htbp!]
+  \begin{center}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/TaP/Ele23_data_fit}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/TaP/Ele23_data_eff}}
+      \caption{Results of the trigger efficiency measurement with the Tag and Probe method for the Ele23 trigger leg. In the left plot the fit for one example bin in data is shown. The right plot shows the efficiency in data and simulation in bins of $\eta$ with multiple colored graphs showing the \pt dependence. Below that the scale factors are shown in the same format. }  
+    \label{fig:TP_Ele23}
+  \end{center}
+\end{figure}
+
+
+%********************************************** Fourth Section
+
+
+\section{Comparison of Trigger Efficiency Measurements}
+
+The two trigger efficiency measurements described in Sections \ref{sec:TriggerMetMethod} and \ref{sec:TriggerMetMethod} have one fundamental difference: The orthogonal trigger method measures the trigger efficiency for a complete trigger selection (multiple triggers) and per each event, which is mainly defined by the existence of two isolated leptons fullfilling some kinematic cuts. In contrast, the Tag and Probe method measures the trigger efficiency for each lepton of each trigger separately. These per leg efficiencies need to be combined to the efficiency for each di-lepton trigger. This is done by multiplying the efficiencies of the single trigger legs. 
+Then the efficiencies of each of the lepton triggers involved in the trigger selection needs to be combined, which is done by multiplying the in-efficiencies of the trigger as in Equation \ref{eq:TPcombine}.
+
+\begin{equation}
+\varepsilon(trig_combined) = 1- (1-\varepsilon(trigA))\cdot(1- \varepsilon(trigB))
+\label{eq:TPcombine}
+\end{equation}
