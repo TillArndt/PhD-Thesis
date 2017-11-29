@@ -182,12 +182,12 @@ The efficiency can also be measured differential depending on kinematic properti
 
 In contrast to the efficiency measurement using orthogonal triggers (see Section \ref{sec:TriggerMetMethod}) the Tag and Probe measurement depends on the lepton itself. It measures the efficiency for each lepton, consequently several measurements have to be combined for a multi lepton trigger or an efficiency measurement with multiple triggers (see Section \ref{sec:TriggerComp}). 
 
-Examples for the efficiency measurement in one bin as well as the overall scale factor for the muonic part ("muon leg") of the HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL trigger both for data and simulation and the resulting overall scale factors are shown in Figure \ref{fig:TP_Mu23}.
+Examples for the efficiency measurement in one bin as well as the overall scale factor for the muonic part ("muon leg") of the\\ HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL trigger both for data and simulation and the resulting overall scale factors are shown in Figure \ref{fig:TP_Mu23}.
 
 \begin{figure}[htbp!]
   \begin{center}
     \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/TaP/Mu23_data_fits}}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/TaP/Mu23_MC_fits}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/TaP/Mu23_MC_fits}}\\
     \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/TaP/Mu23_sf}}
       \caption{Results of the trigger efficiency measurement with the Tag and Probe method for the Mu23 trigger leg. The upper row shows the measurement for one bin for each data (left) and simulation (right). The lower row shows 
        the scale factor between data and simulation binned in $\eta$ and \pt. }  
@@ -195,7 +195,7 @@ Examples for the efficiency measurement in one bin as well as the overall scale 
   \end{center}
 \end{figure}
 
-For the efficiency measurement the electron part ("electron leg") of the HLT\_Mu8\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL trigger for data and simulation and the corresponding scale factors sre shown in Figure \ref{fig:TP_Ele23}.
+For the efficiency measurement the electron part ("electron leg") of the\\ HLT\_Mu8\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL trigger for data and simulation and the corresponding scale factors sre shown in Figure \ref{fig:TP_Ele23}.
 Here the efficiency on simulation is not determined with a fit, but by counting the events.
 
 \begin{figure}[htbp!]
@@ -212,11 +212,35 @@ Here the efficiency on simulation is not determined with a fit, but by counting 
 
 
 \section{Comparison of Trigger Efficiency Measurements}
+\label{sec:TriggerComp}
 
 The two trigger efficiency measurements described in Sections \ref{sec:TriggerMetMethod} and \ref{sec:TriggerMetMethod} have one fundamental difference: The orthogonal trigger method measures the trigger efficiency for a complete trigger selection (multiple triggers) and per each event, which is mainly defined by the existence of two isolated leptons fullfilling some kinematic cuts. In contrast, the Tag and Probe method measures the trigger efficiency for each lepton of each trigger separately. These per leg efficiencies need to be combined to the efficiency for each di-lepton trigger. This is done by multiplying the efficiencies of the single trigger legs. 
-Then the efficiencies of each of the lepton triggers involved in the trigger selection needs to be combined, which is done by multiplying the in-efficiencies of the trigger as in Equation \ref{eq:TPcombine}.
+Then the efficiencies of each of the lepton triggers involved in the trigger selection needs to be combined. Since they are combined with a logical OR, this is done by multiplying the in-efficiencies of the trigger as in Equation \ref{eq:TPcombine}.
 
 \begin{equation}
-\varepsilon(trig_combined) = 1- (1-\varepsilon(trigA))\cdot(1- \varepsilon(trigB))
+\varepsilon(trig_{combined}) = 1- (1-\varepsilon(trig_A))\cdot(1- \varepsilon(trig_B))
 \label{eq:TPcombine}
 \end{equation}
+
+The combined trigger efficiency measured with the Tag and Probe method can be applied per event for the complete trigger selection. It can be then be compared to the trigger efficiency measured with the independent triggers.
+For this comparison both efficiencies are applied to the same simulated \ttbar sample. These \ttbar events are required to contain an electron and a muon \textbf{TODO: reference to selection} and the trigger efficiency scale factors are applied depending on $\eta$ of these leptons.
+After the rescaling, properties of these two sets of \ttbar events are compared as shown in Figure \ref{fig:Clos_emu}.
+
+The distributions are consistent with each other in nearly the whole range of phase space. The largest disagreement is found for events with electrons with $\pt<20\GeV$, but these events are not considered for the final trigger efficiency scale factors. This agreement shows that there is no systematic difference between the two methods to measure a trigger efficiency in the \ttbar phase space. This does not necessarily apply to any other possible phase space, but the trigger efficiency measurement here specifically applies to the \ttbar phase space. This agreement is considered for the determination of the systematic uncertainties on the trigger efficiency.
+
+\begin{figure}[htbp!]
+  \begin{center}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/Clos/emu_ptele}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/Clos/emu_etaele}}\\
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/Clos/emu_ptmu}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/Clos/emu_etamu}} \\
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/Clos/emu_mll}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/Clos/emu_njets}}        
+      \caption{Comparison of \ttbar simulation reweighted according to the trigger efficiencies measured with the Tag and Probe method and with independent MET triggers.
+       The top row shows the comparison in bins of \pt (left) and $\eta$ (right) of the electron. The middle row shows it in bins of \pt (left) and $\eta$ (right) of the muon. The bottom row shows it in bins of the invariant mass of the dilepton system(left) and the number of jets (right). The uncertainties shown are statistical. The lower panels show the ratio of the distribution reweighted with the efficiency from the MET trigger method divided by the distribution reweighted by the Tag and Probe method. }  
+    \label{fig:Clos_emu}
+  \end{center}
+\end{figure}
+
+
+
