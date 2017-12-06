@@ -7,13 +7,12 @@
 
 The uncertainty on the trigger efficiency determination has been one of the dominant systematic uncertainties in \sttbar measurements.
 Consequently, measuring the trigger efficiency with the highest possible precision is an important part of improving the precision of these
-measurements.
+measurements. In the measurement the simulation is rescaled according to the difference between the trigger efficiency in data and simulation. 
+So the trigger efficiency needs to be measured independently in both data and simulation.
 
 This chapter describes the trigger selection used in this measurement and how this selection can already help to improve
-the later efficiency measurement (see Section \ref{sec:TriggerSel}). It is further explained how the efficiency of this trigger selection is measured and
-show the results for this measurement (see Section \ref{sec:TriggerMetMethod}). In order to estimate the precision of this measurement the trigger efficiency
-is also measured with another method (see Section \ref{sec:TriggerTPMethod}). The two results are finally compared and the chapter concludes with defining the uncertainty
-of the trigger efficiency measurement (see Section \ref{sec:TriggerComp}). 
+the later efficiency measurement (see Section \ref{sec:TriggerSel}). It is further explained how the efficiency of this trigger selection is measured(see Section \ref{sec:TriggerMetMethod}). In order to estimate the precision of this measurement the trigger efficiency
+is also measured with another method (see Section \ref{sec:TriggerTPMethod}). The two results are finally compared (see Section \ref{sec:TriggerComp}) and the chapter concludes with the final scale factor between data and simulation (see Section \ref{sec:TrigSF}). 
 
 
 
@@ -21,8 +20,8 @@ of the trigger efficiency measurement (see Section \ref{sec:TriggerComp}).
 \section{Trigger Selection} %Section - 1.1 
 \label{sec:TriggerSel}
 
-The trigger selection is optimized for maximum efficiency. Because of the statistical properties of the binomial distribution a higher efficiency
-leads to a lower uncertainty. The efficiency itself is measured with respect to the final reconstruced (alsso called offline) objects (see Section XX for details
+The trigger selection is optimized for maximum efficiency. This allows to use a high amount of data in the measurement and reduces the uncertainty on the trigger efficieny. as a higher efficiency leads to a lower statistical uncertainty due to the statistical properties of the binomial distribution.
+The efficiency itself is measured with respect to the reconstruced (also called offline) objects (see Section XX for details
 on this reconstruction).
 
 For a di-lepton selection the starting point are of course the di-lepton triggers. There are different triggers depending on the flavor of each of the
@@ -30,10 +29,10 @@ two leptons. These triggers typically have assymetric cuts on the \pt of the two
 the trailing lepton. In general the quantities reconstructed for the trigger are slightly different from the objects used in the offline analysis. This
 leads to an in-efficiency of the trigger compared to the offline selection close to the kinematic requirements for the trigger objects.
 
-In the case of the di-lepton trigger this mainly effects the efficiency at the two \pt cut-offs for the leptons. One way to mitigate this is to
+In the case of the di-lepton trigger this mainly effects the efficiency at the cut-offs in \pt for the two leptons. One way to mitigate this is to
 require a higher offline \pt for the leptons than is required by the trigger \todo{Ref to selection}.
 Another way to reduce this inefficiency is to combine the di-lepton trigger with other triggers which only depend on one lepton, mitigating any
-influence of the second lepton. This leads to a combination of di-lepton and single lepton triggers with a logical "or".
+influence of the second lepton. This leads to a combination of di-lepton and single lepton triggers with a logical 'OR' in the trigger selection.
 In general only unprescaled triggers are used in this analysis.
 
 This combination increases the trigger efficiency by $\sim 10 \; \%$ compared to onyl using the di-lepton trigger.
@@ -41,10 +40,10 @@ This is shown in Figure \ref{fig:TriggerSel} for a dataset taken in 2016 in Run 
 
 \begin{figure}[htbp!]
   \begin{center}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/Trigger_pt_nosilep.png}}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/Trigger_eta_nosilep.png}}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/Trigger_pt.png}}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/Trigger_eta.png}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/Trigger_pt_nosilep.png}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/Trigger_eta_nosilep.png}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/Trigger_pt.png}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/Trigger_eta.png}}
       \caption{Efficiencies of the trigger selection in the \emu channel for simulation and data and the corresponding scale factor. The top row shows the efficiency when using dilepton triggers only, while the bottom row shows
       the efficiency for a combination of dilepton and single lepton triggers. The left row shows the efficiency depending on the \pt of the leading lepton. The right column shows the efficiency depending on the $\eta$ of the leading lepton. }  
        \label{fig:TriggerSel}
@@ -52,7 +51,7 @@ This is shown in Figure \ref{fig:TriggerSel} for a dataset taken in 2016 in Run 
 \end{figure}
 
 
-The final trigger selection is a bit more complicated because we aim to take unprescaled triggers with the most relaxed requirements possible.
+The final trigger selection is a bit more complicated because we use unprescaled triggers with the most relaxed requirements possible.
 This results in the trigger selection shown in Table \ref{tab:triggerSel} for each of the three di-lepton channels.
 Double counting events is prevented by explicitly requiring triggers on their respective dataset, but vetoing them on the other datasets.
 
@@ -97,11 +96,13 @@ Double counting events is prevented by explicitly requiring triggers on their re
 In this analysis the trigger efficiency is mainly measured using a dataset taken with an orthogonal trigger selection.
 In general this allows to measure the trigger efficiency without bias with the same method in data and simulation independently 
 of each other. It is important that these independent triggers are indeed as independent from the dilepton triggers as possible
-and for simplicity they should also be unprescaled in the full run range.
+and for simplicity they should also be unprescaled in the full run range.  This allows to measure the trigger efficiency in the same
+way in both data and simulation.
 
 Here triggers based on missing transverse energy (\ETm) are used. They are especially usefull for a \ttbar analysis, 
 as dileptonic \ttbar events should produce \ETm due to the two neutrinos. This allows to measure the trigger efficiency for data
 in an event sample which at least contains \ttbar events. The efficiency in simulation can be measured on a sample of \ttbar events.
+The correlation between the \ETm and dilepton triggers is studied in simulation and found to be minimal.
 
 The trigger efficiency is then measured according to the formula given in Equation \ref{eq:TriggerEff}, where $N$ denotes the number of 
 events fullfilling the given requirements.
@@ -111,22 +112,22 @@ events fullfilling the given requirements.
 \label{eq:TriggerEff}
 \end{equation}
 
-The efficiency is measured for each event, consequently the resulting scale factors to be applied on simulation to correct to data are applied per event as well.
+The efficiency is measured for each event, so the resulting scale factors to correct simulation to data are applied per event as well.
 This is especially useful if a combination of multiple triggers is used in the selection.
 
 The statistical uncertainty is calculated assuming a binomial distribution using the Clopper-Pearson method \todo{cit PDG}. It offers at least nominal coverage 
-of the given confidence level and preesents the conservative option to estimate these uncertainties. 
+of the given confidence level and presents the conservative option to estimate these uncertainties. 
 
 Results for efficiencies and scale factors for the \ee, \mumu and \emu channel are shown in figures \ref{fig:MET_ee},\ref{fig:MET_mumu} and \ref{fig:MET_emu} respectively.
 
 \begin{figure}[htbp!]
   \begin{center}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/ee/leading_eta}}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/ee/seleading_eta}}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/ee/leading_pt}}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/ee/seleading_pt}}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/ee/jet_multi}}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/ee/vertex_multi}}  
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/MET/ee/leading_eta}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/MET/ee/seleading_eta}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/MET/ee/leading_pt}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/MET/ee/seleading_pt}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/MET/ee/jet_multi}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/MET/ee/vertex_multi}}  
       \caption{Efficiencies of the trigger selection in the \ee channel for simulation and data and the corresponding scale factor. The top row shows the efficiency depending on $\eta$ of the leading (left) and trailing (right) lepton. The middle row shows the effciency \pt of the leading (left) and trailing (right) lepton. The bottom rwo shows the efficiency depending on the jet multiplicity on the left and the vertex multiplicity on the right.
        The error bars denote statistical uncertainties. }  
       
@@ -136,12 +137,12 @@ Results for efficiencies and scale factors for the \ee, \mumu and \emu channel a
 
 \begin{figure}[htbp!]
   \begin{center}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/mumu/leading_eta}}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/mumu/seleading_eta}}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/mumu/leading_pt}}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/mumu/seleading_pt}}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/mumu/jet_multi}}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/mumu/vertex_multi}}  
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/MET/mumu/leading_eta}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/MET/mumu/seleading_eta}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/MET/mumu/leading_pt}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/MET/mumu/seleading_pt}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/MET/mumu/jet_multi}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/MET/mumu/vertex_multi}}  
       \caption{Efficiencies of the trigger selection in the \mumu channel for simulation and data and the corresponding scale factor. The top row shows the efficiency depending on $\eta$ of the leading (left) and trailing (right) lepton. The middle row shows the effciency \pt of the leading (left) and trailing (right) lepton. The bottom rwo shows the efficiency depending on the jet multiplicity on the left and the vertex multiplicity on the right.
       The error bars denote statistical uncertainties. }  
       
@@ -151,12 +152,12 @@ Results for efficiencies and scale factors for the \ee, \mumu and \emu channel a
 
 \begin{figure}[htbp!]
   \begin{center}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/emu/leading_eta}}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/emu/seleading_eta}}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/emu/leading_pt}}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/emu/seleading_pt}}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/emu/jet_multi}}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/MET/emu/vertex_multi}}  
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/MET/emu/leading_eta}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/MET/emu/seleading_eta}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/MET/emu/leading_pt}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/MET/emu/seleading_pt}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/MET/emu/jet_multi}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/MET/emu/vertex_multi}}  
       \caption{Efficiencies of the trigger selection in the \emu channel for simulation and data and the corresponding scale factor. The top row shows the efficiency depending on $\eta$ of the leading (left) and trailing (right) lepton. The middle row shows the effciency \pt of the leading (left) and trailing (right) lepton. The bottom rwo shows the efficiency depending on the jet multiplicity on the left and the vertex multiplicity on the right.
       The error bars denote statistical uncertainties. }  
       
@@ -172,23 +173,23 @@ Results for efficiencies and scale factors for the \ee, \mumu and \emu channel a
 In order to provide an alternative and totally independent trigger efficiency measurement the Tag and Probe method is used.
 Here the trigger efficiency can be measured independently in data and simulation by using the decay of the Z-boson into two leptons.
 
-In general one of the leptons (the Tag) is required to pass a tight selection. This selection includes matching the offline lepton to the lepton reconstructed at trigger level by requiring the two to have a maximum distance and difference in \pt. The second lepton (the Probe) is only required to pass a very loose selection, so it should be as unbiased as possible. The invariant mass of the two leptons then needs to be within the Z-mass window, in which case it can generally be assumed that the second lepton is a real lepton and not a fake.
+In general one of the leptons (the Tag) is required to pass a tight selection. This selection includes matching the offline lepton to the lepton reconstructed at trigger level by requiring the two to have a maximum distance and difference in \pt. The second lepton (the Probe) is only required to pass a very loose selection, so it should be as unbiased as possible. The invariant mass of the two leptons then needs to be within the Z-mass window, in which case it can generally be assumed that the leptons are real leptons and not fakes.
 In order to measure the efficiency of a certain requirement the probe can then either fullfill it ("passing probe") or fail it ("failing probe"). The efficiency is then determined by dividing the number of passing probes by all probes.
 
 A residual fake contamination is determined by fitting both background and signal distributions for passing and failing probes. The background distribution is often described by an exponential function. The signal has a more complicated functional form, it can for example be parametrized by a double voigtian function. When the efficiency is measured on data it is also possible to fit templates from MC.
 In contrast for the efficiency determination in simulation a fit is sometimes not needed as the fake contamination can be negligible.
 
-The efficiency can also be measured differential depending on kinematic properties of the lepton. It commonly depends on both the $\eta$ and the \pt of the lepton. 
+The efficiency is measured differentialy depending on kinematic properties of the lepton. It commonly depends on both the $\eta$ and the \pt of the lepton. 
 
-In contrast to the efficiency measurement using orthogonal triggers (see Section \ref{sec:TriggerMetMethod}) the Tag and Probe measurement depends on the lepton itself. It measures the efficiency for each lepton, consequently several measurements have to be combined for a multi lepton trigger or an efficiency measurement with multiple triggers (see Section \ref{sec:TriggerComp}). 
+In contrast to the efficiency measurement using orthogonal triggers (see Section \ref{sec:TriggerMetMethod}) the Tag and Probe measurement depends on a specific lepton. It measures the efficiency for each lepton, consequently several measurements have to be combined for a multi lepton trigger or an efficiency measurement with multiple triggers (see Section \ref{sec:TriggerComp}). 
 
 Examples for the efficiency measurement in one bin as well as the overall scale factor for the muonic part ("muon leg") of the\\ HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL trigger both for data and simulation and the resulting overall scale factors are shown in Figure \ref{fig:TP_Mu23}.
 
 \begin{figure}[htbp!]
   \begin{center}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/TaP/Mu23_data_fits}}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/TaP/Mu23_MC_fits}}\\
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/TaP/Mu23_sf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/TaP/Mu23_data_fits}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/TaP/Mu23_MC_fits}}\\
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/TaP/Mu23_sf}}
       \caption{Results of the trigger efficiency measurement with the Tag and Probe method for the Mu23 trigger leg. The upper row shows the measurement for one bin for each data (left) and simulation (right). The lower row shows 
        the scale factor between data and simulation binned in $\eta$ and \pt. }  
     \label{fig:TP_Mu23}
@@ -200,8 +201,8 @@ Here the efficiency on simulation is not determined with a fit, but by counting 
 
 \begin{figure}[htbp!]
   \begin{center}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/TaP/Ele23_data_fit}}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/TaP/Ele23_data_eff}}
+    \resizebox{0.6 \textwidth}{!}{\includegraphics{Trigger/Figures/TaP/ele_plots_only}}
+    \resizebox{0.39 \textwidth}{!}{\includegraphics{Trigger/Figures/TaP/Ele23_data_eff}}
       \caption{Results of the trigger efficiency measurement with the Tag and Probe method for the Ele23 trigger leg. In the left plot the fit for one example bin in data is shown. The right plot shows the efficiency in data and simulation in bins of $\eta$ with multiple colored graphs showing the \pt dependence. Below that the scale factors are shown in the same format. }  
     \label{fig:TP_Ele23}
   \end{center}
@@ -214,7 +215,9 @@ Here the efficiency on simulation is not determined with a fit, but by counting 
 \section{Comparison of Trigger Efficiency Measurements}
 \label{sec:TriggerComp}
 
-The two trigger efficiency measurements described in Sections \ref{sec:TriggerMetMethod} and \ref{sec:TriggerMetMethod} have one fundamental difference: The orthogonal trigger method measures the trigger efficiency for a complete trigger selection (multiple triggers) and per each event, which is mainly defined by the existence of two isolated leptons fullfilling some kinematic cuts. In contrast, the Tag and Probe method measures the trigger efficiency for each lepton of each trigger separately. These per leg efficiencies need to be combined to the efficiency for each di-lepton trigger. This is done by multiplying the efficiencies of the single trigger legs. 
+The two trigger efficiency measurements described in Sections \ref{sec:TriggerMetMethod} and \ref{sec:TriggerMetMethod} have one fundamental difference: The orthogonal trigger method measures the trigger efficiency for a complete trigger selection (multiple triggers) and per each event, which is mainly defined by the existence of two isolated leptons fullfilling some kinematic cuts. In contrast, the Tag and Probe method measures the trigger efficiency for each lepton of each trigger separately. 
+
+These per leg efficiencies need to be combined to the efficiency for each di-lepton trigger. This is done by multiplying the efficiencies of the single trigger legs considering them to be uncorrelated. 
 Then the efficiencies of each of the lepton triggers involved in the trigger selection needs to be combined. Since they are combined with a logical OR, this is done by multiplying the in-efficiencies of the trigger as in Equation \ref{eq:TPcombine}.
 
 \begin{equation}
@@ -230,17 +233,45 @@ The distributions are consistent with each other in nearly the whole range of ph
 
 \begin{figure}[htbp!]
   \begin{center}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/Clos/emu_ptele}}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/Clos/emu_etaele}}\\
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/Clos/emu_ptmu}}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/Clos/emu_etamu}} \\
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/Clos/emu_mll}}
-    \resizebox{0.48 \textwidth}{!}{\includegraphics{Chapter1/Figures/Clos/emu_njets}}        
-      \caption{Comparison of \ttbar simulation reweighted according to the trigger efficiencies measured with the Tag and Probe method and with independent MET triggers.
-       The top row shows the comparison in bins of \pt (left) and $\eta$ (right) of the electron. The middle row shows it in bins of \pt (left) and $\eta$ (right) of the muon. The bottom row shows it in bins of the invariant mass of the dilepton system(left) and the number of jets (right). The uncertainties shown are statistical. The lower panels show the ratio of the distribution reweighted with the efficiency from the MET trigger method divided by the distribution reweighted by the Tag and Probe method. }  
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/Clos/emu_ptele}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/Clos/emu_etaele}}\\
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/Clos/emu_ptmu}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/Clos/emu_etamu}} \\
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/Clos/emu_mll}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/Clos/emu_njets}}        
+      \caption{Comparison of \ttbar simulation reweighted according to the trigger efficiencies measured with the Tag and Probe method and with independent \ETm triggers.
+       The top row shows the comparison in bins of \pt (left) and $\eta$ (right) of the electron. The middle row shows it in bins of \pt (left) and $\eta$ (right) of the muon. The bottom row shows it in bins of the invariant mass of the dilepton system(left) and the number of jets (right). The uncertainties shown are statistical. The lower panels show the ratio of the distribution reweighted with the efficiency from the \ETm trigger method divided by the distribution reweighted by the Tag and Probe method. }  
     \label{fig:Clos_emu}
   \end{center}
 \end{figure}
+
+\section{Determination of the Trigger Scale Factor}
+
+\label{sec:TrigSF}
+
+The factor correcting the trigger efficiency in simulation to the data is determined using the independent trigger method described in Section \ref{sec:TriggerMetMethod}. 
+As it measures the trigger efficiency directly per event for the complete trigger selection and does not require any additional assumptions on the correlations between the triggers or the respective parts of the triggers it is prefered to the Tag and Probe method. 
+
+Based on the comparison of the two methods (see Section \ref{sec:TriggerComp}), a remaining systematic uncertainty of $0.3\;\%$ is applied in addition to the statistical uncertainty.
+Systematic and statistic uncertainty are added up in quadrature. 
+
+The scale factors are binned in $|\eta|$ of the two leptons. This provides a good compromise between covering disagreements between data and simulation seen in Section \ref{sec:TriggerMetMethod} and sufficient statistical power for each bin.
+
+These scale factors are shown in Figure \ref{fig:TrigSF} .
+
+\begin{figure}[htbp!]
+  \begin{center}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/emu_eta2d_sf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/mumu_eta2d_sf}}\\
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{Trigger/Figures/ee_eta2d_sf}}       
+      \caption{Scale factors from the trigger efficiencies of the trigger selection in the \emu (top left), \mumu (top right) and \ee (middle) channel. The scale factors are given in bins of the $|\eta|$ of the two leptons. The errors denote the combination of statistical and systematic uncertainties.}  
+    \label{fig:TrigSF}
+  \end{center}
+\end{figure}
+
+
+
+
 
 
 
