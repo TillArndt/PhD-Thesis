@@ -3,5 +3,35 @@
 %****************************** Second Chapter *********************************
 %*******************************************************************************
 
-\chapter{Introduction}
+\chapter{Systematic Uncertainties}
+\label{sec:syst_uncert}
 
+The precision of the measurement of the \ttbar cross section is typically dominated by systematic uncertainties,
+even when only a comparetively small amount of data is used \todo{Cite TOP-16-005 ?}. This is clearly the case in this
+measurement so the systematic uncertainties have to be analysed in detail.
+
+In this chapter the systematic uncertainties are described in detail starting with the uncertainties based on experimental effects in Section \ref{sec:exp_uncert}.
+The uncertainties based on theoretical assumptions are discussed in Section \ref{sec:theo_uncert}. If necessary the treatmend of the systematics as nuisance
+parameter and especially the prior that is chosen to model the behaviour of the respective nuisance parameter.
+
+
+\section{Experimental Uncertainties}
+\label{sec:exp_uncert}
+
+\subsection{Uncertainties Related to Leptons}
+
+The identification and reconstruction of an electron according to the procedure described in Section \todo{Cite respective section} have different efficiencies in data and simulation.
+These efficiencies are corrected to data in the simulation, but the efficiency measurements themselves have an uncertainty that needs to be propagated to the final measurement.
+This uncertainty is comprised of different effects such the statistics of the dataset and the simulated sample used in the efficiency measurement. Alternative models for both the background contribution
+and the shape of the Z boson mass peak are also taken into account in the efficiency measurement in data. For the efficiency in simulation the uncertainty related to the choice of the specific simulation is assessed by comparing a LO and a NLO simulation.
+Finally the uncertainty due to the selection of the tag is evaluated by changing the tag selection in both data and MC.
+These contributions are considered to be uncorrelated and added up in quadrature. 
+In the cross section measurement the scale factor for the electron identification efficiency is then varied up and down according to it's overall uncertainties.
+
+The energy of an electron that is measured with the detector needs to be scaled to account for effects in the reconstruction. In simulation the energy needs to be smeared so the energy resolution in simulation is representative of the resoltion in data.
+The uncertainty combines the effects of training these corrections for electrons or photons, the choice of cuts used in the training and the choice of the simulated sample that is used in the training. It also includes an uncertainty on the method itself evaluated with a closure test and a correction for a possible
+dependance of the original energy of the electron.
+The energy scale and smearing corrections are then varied within their uncertainties on simulation and treated as separate nuisance parameters.
+
+\section{Theoretical Uncertainties}
+\label{sec:theo_uncert}

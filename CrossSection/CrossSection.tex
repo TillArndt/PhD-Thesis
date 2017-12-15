@@ -4,8 +4,73 @@
 %*******************************************************************************
 \chapter{Measurement of the Top Quark Pair Production Cross Section}
 
+The measurement of the top quark production cross section requires multiple steps.
+First, the events that are to be used in the measurement need to be selected as described in Section \ref{sec:xsec_sel}.
+Based on this selection the simulation is compared to data to assure that the simulation gives a good estimation of the actual measurement (see Section \ref{sec:xsec_datamc}).
+On that dataset the cross section is then measured using a template based binned $\chi^2$ fit as described in Section \ref{sec:xsec_fit}.
+The templates are chosen to maximize the precision of the analysis as described in Section \ref{sec:xsec_templates}.
+Then the fitting procedure and the statistics model are described in more detail in Section \ref{sec:xsec_stat}.
+Finally the extrapolation from the full to the fiducial cross section is discussed in Section \ref{sec:xsec_extraction}.
+
+In general the cross section can be measured according to Equation \ref{eq:CaC}. Here $N_{top}$ denotes the number of selected events containing a top quark pair, $A$ denotes the acceptance of the selection,
+$\varepsilon$ denotes the efficiency of the selection and $\mathcal{L}$ denotes the luminosity.
+
+\begin{equation}
+\sttbar = \frac{N_{top}}{A \cdot \varepsilon \cdot \mathcal{L}}
+\label{eq:CaC}
+\end{equation} 
+
+Since the selected sample does not only contain top quark pair events the amount of background needs to be determined.
+This is done here by fitting template predictions for all relevant background processes and \ttbar to the data.
+
 \section{Event Selection}
+\label{sec:xsec_sel}
+
+The aim of the selection is to select a dataset that is dominated by \ttbar events.
+At the same time it also defines acceptance and with it the visual phase space, which should be as broad as possible.
+This can partially be solved by using different cuts in the different lepton decay channels and then relying on the principle
+of lepton universality in the extrapolation.
+
+All events need to fullfill the trigger selection described in detail in Section \ref{sec:Triggersel}.
+
+In the dilepton channel events need two isolated and well defined leptons \todo{Link to reconstruction chapter}.
+Both leptons also need to be within the coverage of the tracker fullfilling the condition of $|\eta| < 2.4$.
+For electrons the gap region of the electronic calorimeter $1.4442<|\eta|<1.566$ is vetoed as well.
+The decay is then defined according to the two leptons leading in \pt requiring the leading lepton to have $\pt > 25 \GeV$
+and the sub leading lepton to have $\pt > 20 \GeV$. 
+According to these two leptons the events are then classified into the \emu,\ee and \mumu channels.
+
+The mass of the dilepton system is required to have $\mll > 20 \GeV$ to avoid contamination from low mass DY events.
+In the same-flavor channels the window of the Z-mass resonance is vetoed $76 \GeV < \mll <106 \GeV$ to reduce the dominant background of 
+resonant Drell-Yan production.
+
+Jets are required to have $\pt > 30 \GeV$ and $|\eta|<2.4$. In order to identify b-tagged jets a tight working point is chosed, giving as high 
+purity for selected b-tagged jets.
+
+In the same flavor channels events are required to contain one b-tagged jets, while in the \emu channel does not include any requirement on the jets.
+
+The visible phase space is defined according to the cuts on the \emu channels as it has the highest acceptance:
+The leading lepton is required to have $\pt > 25 \GeV$ and the sub leading lepton is required to have $\pt > 20 \GeV$ with the dilepton system
+fullfilling $\mll > 20 \GeV$. The principle of lepton universality allows to assume that the regions of the phase space that are additionally cut in the 
+same flavor channels can be covered by assuming the same behaviour as in the \emu channel.
+
+
+
+\subsection{Comparison of Simulation and Data}
+\label{sec:xsec_datamc}
 
 \section{Extracting the Cross Section}
+\label{sec:xsec_fit}
+
+The cross section is extracted in a binned $\chi^2$ fit with the \ttbar cross section as free parameter. Templates taken from simulation are fitted to data distributions and systematic uncertainties are treated as nuisance parameters. 
+The templates for the fit are separated by dilepton decay channel. For each decay channel they are further sub-divided by the number of b-tagged jets, with categories for one, two and zero or more than two b-tagged jets. This allows an explicit and independent determination of the efficiency of the b-tagging algorithm for data and simulation depending on the nuisance parameter.
+
+\subsection{The Choice of Sensitive Templates}
+\label{sec:xsec_templates}
 	
-\subsection{}
+\subsection{The Fitting Procedure}
+\label{sec:xsec_stat}
+
+\subsection{Extraction from the visual to the Full Phase Space}
+\label{sec:xsec_extraction}
+
