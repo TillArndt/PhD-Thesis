@@ -60,6 +60,122 @@ The visible phase space also defines the acceptance which is the correction from
 \subsection{Comparison of Simulation and Data}
 \label{sec:xsec_datamc}
 
+The events passing the event selection described in Section \ref{sec:xsec_sel} are shown in Figures \ref{fig:xsec_emu_ctrplots},\ref{fig:xsec_mumu_ctrplots} and \ref{fig:xsec_ee_ctrplots} for the \emu, \mumu and \ee decay channel respectively. Multiple variables related to the basic physics objects like leptons and jets are shown, which are also used to select the events themselves. The plots show that the simulation can reproduce the overall  behaviour of the data. 
+There is a disagreement between data and simulation for a high number of jets in the \emu and \mumu channels. This is a well known issue in the simulation of \ttbar events and as shown in the plots its well covered by the systematic variations \todo{some ref to specific systematics}. 
+
+Overall agreement between observation and prediction is especially important in this measurement, since the templates that are later used to determine the cross section in a template fit are taken from simulation.
+This assumes that the simulation is able to predict the shape of the physics processes within the systematic variations.
+
+The comparison between data and simulation also show that the events after the selection are dominated by \ttbar events. The influence of the background processes and their uncertainties can be assumed to be small.
+Further separating signal and background is possible by further splitting the events. Especially variables related to jets and b-tagged jets provide discrimination between signal and background as shown in the lower row of Figures 
+\ref{fig:xsec_emu_ctrplots},\ref{fig:xsec_mumu_ctrplots} and \ref{fig:xsec_ee_ctrplots}.
+
+
+\begin{figure}[htbp!]
+  \begin{center}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{CrossSection/Figures/ControlPlots/emu_sysnom/lead_lepton_pt_step_8.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{CrossSection/Figures/ControlPlots/emu_sysnom/lead_lepton_eta_step_8.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{CrossSection/Figures/ControlPlots/emu_sysnom/seclead_lepton_pt_step_8.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{CrossSection/Figures/ControlPlots/emu_sysnom/seclead_lepton_eta_step_8.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{CrossSection/Figures/ControlPlots/emu_sysnom/selected_jets_multi_step_8.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{CrossSection/Figures/ControlPlots/emu_sysnom/selected_b-jet_multi_step_8.pdf}}
+      \caption{Transverse momentum (left) and pseudorapidity (right)
+        of leading (first row) and second-leading (second row) lepton in the \emu channel after the
+        event selection required by the \ttbar cross section
+        extraction technique based on a simultaneous fit.
+        Jet and b-jet multiplicity after the same selection steps are
+        shown in the third row. The hatched
+        bands correspond to the total uncertainty on the sum of the
+        predicted yields. 
+        %agrohsje , excluding luminosity and background
+        %normalization uncertainties. 
+        The ratios of data to the sum of the predicted yields are
+        shown at the bottom of each plot. Here, the solid gray band
+        represents the contribution of the statistical uncertainty.}  
+       \label{fig:xsec_emu_ctrplots}
+  \end{center}
+\end{figure}
+
+\begin{figure}[htbp!]
+  \begin{center}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{CrossSection/Figures/ControlPlots/mumu_sysnom/lead_lepton_pt_step_8.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{CrossSection/Figures/ControlPlots/mumu_sysnom/lead_lepton_eta_step_8.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{CrossSection/Figures/ControlPlots/mumu_sysnom/seclead_lepton_pt_step_8.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{CrossSection/Figures/ControlPlots/mumu_sysnom/seclead_lepton_eta_step_8.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{CrossSection/Figures/ControlPlots/mumu_sysnom/selected_jets_multi_step_8.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{CrossSection/Figures/ControlPlots/mumu_sysnom/selected_b-jet_multi_step_8.pdf}}
+      \caption{Transverse momentum (left) and pseudorapidity (right)
+        of leading (first row) and second-leading (second row) lepton in the \mumu channel after the
+        event selection required by the \ttbar cross section
+        extraction technique based on a simultaneous fit. Jet and b-jet multiplicity after the same selection steps are
+        shown in the third row. The hatched
+        bands correspond to the total uncertainty on the sum of the
+        predicted yields. 
+        %agrohsje , excluding luminosity and background
+        %normalization uncertainties. 
+        The ratios of data to the sum of the predicted yields are
+        shown at the bottom of each plot. Here, the solid gray band
+        represents the contribution of the statistical uncertainty.}  
+       \label{fig:xsec_mumu_ctrplots}
+  \end{center}
+\end{figure}
+
+\begin{figure}[htbp!]
+  \begin{center}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{CrossSection/Figures/ControlPlots/ee_sysnom/lead_lepton_pt_step_8.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{CrossSection/Figures/ControlPlots/ee_sysnom/lead_lepton_eta_step_8.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{CrossSection/Figures/ControlPlots/ee_sysnom/seclead_lepton_pt_step_8.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{CrossSection/Figures/ControlPlots/ee_sysnom/seclead_lepton_eta_step_8.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{CrossSection/Figures/ControlPlots/ee_sysnom/selected_jets_multi_step_8.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{CrossSection/Figures/ControlPlots/ee_sysnom/selected_b-jet_multi_step_8.pdf}}
+      \caption{Transverse momentum (left) and pseudorapidity (right)
+        of leading (first row) and second-leading (second row) lepton in the \ee channel after the
+        event selection required by the \ttbar cross section
+        extraction technique based on a simultaneous fit. Jet and b-jet multiplicity after the same selection steps are
+        shown in the third row. The hatched
+        bands correspond to the total uncertainty on the sum of the
+        predicted yields. 
+        %agrohsje , excluding luminosity and background
+        %normalization uncertainties. 
+        The ratios of data to the sum of the predicted yields are
+        shown at the bottom of each plot. Here, the solid gray band
+        represents the contribution of the statistical uncertainty.}  
+       \label{fig:xsec_ee_ctrplots}
+  \end{center}
+\end{figure}
+
+As described in Section \todo{Ref to reconstruction} the efficiencies for the reconstruction of physics objects is different in data and simulation, which needs to be corrected.
+This is especially important for leptons since we require two of those in the selection.
+In order to assess the quality of the correction a carefull look into sensitive variables is important. Any large discrepancies between simulation and prediction would suggest that these corrections
+are not optimal for the given selection.
+The invariant mass of the dilepton system is shown in Figure \ref{fig:xsec_ctrplots_mll} for all three decay channels and depending on the number of b-tagged jets.
+The simulation agrees with the measurement, so it can be assumed that the efficiency corrections are accurate.
+The figures also show again how the DY contribution decreases when more b-tagged jets are required.
+
+
+\begin{figure}[htbp!]
+  \begin{center}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{CrossSection/Figures/ControlPlots/emu_sysnom/mll_0_b-jets_step_8.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{CrossSection/Figures/ControlPlots/emu_sysnom/mll_1_b-jets_step_8.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{CrossSection/Figures/ControlPlots/emu_sysnom/mll_2_b-jets_step_8.pdf}} \\
+        \resizebox{0.48 \textwidth}{!}{\includegraphics{CrossSection/Figures/ControlPlots/mumu_sysnom/mll_1_b-jets_step_8.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{CrossSection/Figures/ControlPlots/mumu_sysnom/mll_2_b-jets_step_8.pdf}} \\
+        \resizebox{0.48 \textwidth}{!}{\includegraphics{CrossSection/Figures/ControlPlots/ee_sysnom/mll_1_b-jets_step_8.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{CrossSection/Figures/ControlPlots/ee_sysnom/mll_2_b-jets_step_8.pdf}}
+
+      \caption{Invariant mass of the dilepton system with zero (top row left), one (top row right) and two (second row) b-tagged 
+      jets in the \emu channel. The invariant mass of the dilepton system in the \mumu (third row) and \ee (bottom row) with one (left)
+      and two b-tagged jets (right).
+        %agrohsje , excluding luminosity and background
+        %normalization uncertainties. 
+        The ratios of data to the sum of the predicted yields are
+        shown at the bottom of each plot. Here, the solid gray band
+        represents the contribution of the statistical uncertainty.}  
+       \label{fig:xsec_ctrplots_mll}
+  \end{center}
+\end{figure}
+
+
 \section{Extracting the Cross Section}
 \label{sec:xsec_fit}
 
@@ -192,7 +308,7 @@ then by the number of additional light jets resulting in twenty eight distributi
 \subsection{The Fitting Procedure}
 \label{sec:xsec_stat}
 
-Following the description above a binned $\chi^2$ fit is used to extract the cross section and other free parameters.
+Following the description in Section \ref{sec:xsec_fit} a binned $\chi^2$ fit is used to extract the cross section and other free parameters.
 The basic expression that is minimised can be expressed in the following way:
 
 \begin{equation}
@@ -217,7 +333,7 @@ Here $i$ again denotes the bin, while $l$ denotes the background process. The nu
 The number of background events for each background process $b_{l,i}$ also depends on the nuisance parameters and the normalisation of the respective background process $\omega_l$.
 In general nuisance parameters related to the detector affect both background and signal, while uncertainties affecting the theory predictions only affect the respective background (see Section \todo{Link to systematics chapter}).
 
-Following the explanation above the number of signal events can be further devided according to the number of b-tagged jets.
+Following the principles given in Section \ref{sec:xsec_fit}  the number of signal events can be further devided according to the number of b-tagged jets.
 Since each of the top quarks decays into a W boson and a b quark it can be assumed that every \ttbar event should contain two jets originating from a b quark.
 Any decays of a top quark to a W boson and a light quark can be considered negligible.
 It can therefore be assumed that selecting less than two b-tagged jets in a \ttbar event is a measure for the inefficiency of the selection of b-tagged jets.
@@ -233,7 +349,9 @@ s_2  &=& \mathcal{L}_{\rm int} \stt \epsilon_{ll} \cdot   \epsilon_b^2 C_b
 Here $\mathcal{L}_{\rm int}$ is the integrated luminosity, $\stt$ is the \ttbar cross section and $\epsilon_ll$ is the efficiency of the dilepton selection.
 The b-tag efficiency $\epsilon_b$ includes both the efficiency of the kinematic cuts on the b-jet ($\pt > 30\; \GeV, |\eta|<2.4$) and the efficiency of the b-tagging algorithm.
 It is generally assumed that the two b-jets can be identified independently of each other. Any remaining correlation is covered by the parameter $C_b$ that can also be written as
-$C_b=4s_{ll}s_2/(s_1+2s_2)^2$ where $\s_{ll}$ is the total number of selected events. 
+$C_b=4s_{ll}s_2/(s_1+2s_2)^2$ where $s_{ll}$ is the total number of selected events. 
+
+The cross used for here is the visible cross section. The extrapolation to the full phase space using the acceptance will be described in the next section.
 
 
 The number of background events as used in Equation \ref{eq:xsec_expectev} can be decomposed as :
@@ -251,10 +369,28 @@ Within the fit, the MC simulated quantities $\epsilon_{ll}$, $b_{l,i}$ and $s_{i
 This dependece is modeled with a second order polynomial which is constructed using the nominal and the two systematically varied values of each nuisance parameters $\lambda_m=0,1,-1$.
 Some nuisance parameters are based on a one-sided variation so one systematically varied value exists. In these cases the dependence of the simulated quantities is modeled by a linear function.
 
-The MINUIT~\cite{James:1975dr} program is used to minimize the  $\chi^2$ term (see \ref{eq:xsec_chisqfunct} ) as function of the free fit parameters $\stt$, $\vec{\omega}$
+The MINUIT~\cite{James:1975dr} algorithm is used to minimize the  $\chi^2$ term (see \ref{eq:xsec_chisqfunct} ) as function of the free fit parameters $\stt$, $\vec{\omega}$
 and $\vec{\lambda}$. 
 
 
-\subsection{Extraction from the visual to the Full Phase Space}
+\subsection{Extrapolation from the visual to the Full Phase Space}
 \label{sec:xsec_extraction}
+
+The previous explanation only dealt with the fiducial cross section in the measured phase space. In order to extrapolate that result to the full phase space the acceptance
+needs to be considered.
+
+The acceptance can be introduced by replacing the efficiency of the dilepton selection as follows:
+
+\begin{equation}
+\epsilon_{ll} = A_{ll} \epsilon^{vis}_{ll}.
+\label{eq:epsacc}
+\end{equation}
+
+Here $A_{ll}$ is the acceptance and $\epsilon^{vis}_{ll}$ is the efficiency in the visible phase space, with both depending on the nuisance parameters $\vec{\lambda}$.
+The acceptance is defined by the kinematic selection requirements on the leptons as given in Section \ref{sec:xsec_sel} applied on the simulated quantites as defined by the 
+matrix element generation. There the two leptons are required to be part of the $t \rightarrow W b$ decay. They are further required to be within $|\eta|< 2.4$ with the 
+leading lepton having $\pt > 25 \; \GeV$ and the trailing lepton $\pt > 20 \; \GeV$. The invariant mass of the dilepton system is required to be $\mll > 20 \; \GeV$.
+These cuts correspond to the selection in the \emu decay channel.
+
+
 
