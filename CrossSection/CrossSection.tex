@@ -218,11 +218,10 @@ The variables that are used should both allow to further separate signal and bac
 variations in order to constrain their impact on the final result.
 
 As the b-tagging efficiency is already determined intrinsically the fit will already be sensitive to the related nuisance parameters.
-Beside the number of b-jets the number of light jets is one of the main discriminators between \ttbar and background events.
+Beside the number of b-jets, the number of light jets is one of the main discriminators between \ttbar and background events.
 Together with the \pt of the light jets it is also sensitive to the systematic uncertainty on the response of the jet reconstruction and
 the systematic uncertainties introduced by theoretical assumptions in the simulation.
-These systematic uncertainties make large contributions to the \ttbar cross section measurement \todo{Link to CC}, so reducing
-them should help to improve on previous measurements.
+These systematic uncertainties make large contributions to the total uncertainty on the \ttbar cross section measurement \todo{Link to CC}, so reducing them is important.
 
 The final templates are shown in Figures \ref{fig:xsec_emu_inputdistr,fig:xsec_mumu_inputdistr,fig:xsec_ee_inputdistr} for the \emu,\mumu and \ee channel respectively. The events are divided first by the dilepton decay channel, then by number of b-tagged jets and 
 then by the number of additional light jets resulting in twenty eight distributions overall.
@@ -340,7 +339,17 @@ The events contain a signal as well as a background contribution so $\mu_i$ be w
 
 Here $i$ again denotes the bin, while $l$ denotes the background process. The number of signal events $s_i$ depends on the \ttbar cross section $\stt$ and the nuisance parameters $\vec{\lambda}$.
 The number of background events for each background process $b_{l,i}$ also depends on the nuisance parameters and the normalisation of the respective background process $\omega_l$.
-In general nuisance parameters related to the detector affect both background and signal, while uncertainties affecting the theory predictions only affect the respective background (see Section \todo{Link to systematics chapter}).
+In general nuisance parameters related to the detector affect both background and signal, while uncertainties affecting the theory predictions only affect the respective background or signal prediction (see Section \todo{Link to systematics chapter}).
+
+
+The number of background events as used in Equation \ref{eq:xsec_expectev} can be decomposed as :
+
+\begin{equation}
+b_{l,i} = b_{l,i}^{MC} \cdot (1 + \gamma_l \omega_l),
+\label{eq:nbli}
+\end{equation}
+
+Here $b_{l,i}^{MC}$ denotes the expected number of events from the simulation of the respective background process and $\gamma_l$ denotes its uncertainty.
 
 Following the principles given in Section \ref{sec:xsec_fit}  the number of signal events can be further devided according to the number of b-tagged jets.
 Since each of the top quarks decays into a W boson and a b quark it can be assumed that every \ttbar event should contain two jets originating from a b quark.
@@ -355,24 +364,11 @@ s_2  &=& \mathcal{L}_{\rm int} \stt \epsilon_{ll} \cdot   \epsilon_b^2 C_b
 \label{eq:xsec_nb}.
 \end{eqnarray}
 
-Here $\mathcal{L}_{\rm int}$ is the integrated luminosity, $\stt$ is the \ttbar cross section and $\epsilon_ll$ is the efficiency of the dilepton selection.
+Here $\mathcal{L}_{\rm int}$ is the integrated luminosity, $\stt$ is the visible \ttbar cross section and $\epsilon_ll$ is the efficiency of the dilepton selection.
 The b-tag efficiency $\epsilon_b$ includes both the efficiency of the kinematic cuts on the b-jet ($\pt > 30\; \GeV, |\eta|<2.4$) and the efficiency of the b-tagging algorithm.
 It is generally assumed that the two b-jets can be identified independently of each other. Any remaining correlation is covered by the parameter $C_b$ that can also be written as
 $C_b=4s_{ll}s_2/(s_1+2s_2)^2$ where $s_{ll}$ is the total number of selected events. 
-
-The cross used for here is the visible cross section. The extrapolation to the full phase space using the acceptance will be described in the next section.
-
-
-The number of background events as used in Equation \ref{eq:xsec_expectev} can be decomposed as :
-
-\begin{equation}
-b_{l,i} = b_{l,i}^{MC} \cdot (1 + \gamma_l \omega_l),
-\label{eq:nbli}
-\end{equation}
-
-Here $b_{l,i}^{MC}$ denotes the expected number of events from the simulation of the respective background process and $\gamma_l$ denotes its uncertainty.
-
-The quantities for $\epsilon_{ll}$,$\epsilon_b$, $C_b$, 
+The extrapolation to the full phase space using the acceptance will be described in the next section.
 
 Within the fit, the MC simulated quantities $\epsilon_{ll}$, $b_{l,i}$ and $s_{i}$ are taken from simulation and depend on the nuisance parameters $\vec{\lambda}$.
 This dependece is modeled with a second order polynomial which is constructed using the nominal and the two systematically varied values of each nuisance parameters $\lambda_m=0,1,-1$.
@@ -384,10 +380,10 @@ and $\vec{\lambda}$.
 \todo{Describe stat model when its final}
 
 
-\subsection{Extrapolation from the visual to the Full Phase Space}
+\subsection{Extrapolation from the visible to the Full Phase Space}
 \label{sec:xsec_extraction}
 
-The previous explanation only dealt with the fiducial cross section in the measured phase space. In order to extrapolate that result to the full phase space the acceptance
+The previous explanation only dealt with the visible cross section in the visible phase space. In order to extrapolate that result to the full phase space the acceptance
 needs to be considered.
 
 The acceptance can be introduced by replacing the efficiency of the dilepton selection as follows:
