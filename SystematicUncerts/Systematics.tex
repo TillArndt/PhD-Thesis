@@ -11,8 +11,8 @@ even when only a comparetively small amount of data is used \todo{Cite TOP-16-00
 measurement so the systematic uncertainties have to be analysed in detail.
 
 In this chapter the systematic uncertainties are described in detail starting with the uncertainties based on experimental effects in Section \ref{sec:exp_uncert}.
-The uncertainties based on theoretical assumptions are discussed in Section \ref{sec:theo_uncert}. If necessary the treatmend of the systematics as nuisance
-parameter and especially the prior that is chosen to model the behaviour of the respective nuisance parameter.
+The uncertainties based on theoretical assumptions are discussed in Section \ref{sec:theo_uncert}. If necessary the treatment of the systematics as nuisance
+parameter and especially the prior that is chosen to model the behaviour of the respective nuisance parameter is discussed as well.
 
 
 \section{Experimental Uncertainties}
@@ -22,6 +22,7 @@ parameter and especially the prior that is chosen to model the behaviour of the 
 
 The identification and reconstruction of an electron according to the procedure described in Section \todo{Cite respective section} have different efficiencies in data and simulation.
 These efficiencies are corrected to data in the simulation, but the efficiency measurements themselves have an uncertainty that needs to be propagated to the final measurement.
+The efficiency is usually measure with the Tag and Probe method, which allows to measure the efficiency independently in data and simulation as described in Section \ref{sec:TriggerTPMethod}.
 This uncertainty is comprised of different effects such the statistics of the dataset and the simulated sample used in the efficiency measurement. Alternative models for both the background contribution
 and the shape of the Z boson mass peak are also taken into account in the efficiency measurement in data. For the efficiency in simulation the uncertainty related to the choice of the specific simulation is assessed by comparing a LO and a NLO simulation.
 Finally the uncertainty due to the selection of the tag is evaluated by changing the tag selection in both data and MC.
@@ -33,5 +34,90 @@ The uncertainty combines the effects of training these corrections for electrons
 dependance of the original energy of the electron.
 The energy scale and smearing corrections are then varied within their uncertainties on simulation and treated as separate nuisance parameters.
 
+The efficiency uncertainty for the muon is treated similar to that of the electron.
+The identification and reconstruction efficiency of the muon is again independently measured in data and simulation with the Tag and Probe method.
+The simulation is then corrected according to the difference.
+The uncertainty takes the effects from the number of bins in the range of the Z mass peak and the size of the range into account. It also includes the variation of the signal shape and the 
+selection requirements. The final number is estimated as a conservative envelope to be $1.25 \; \%$ in all bins.
+
+The energy of the muon also needs to corrected in both data and simulation. This corrects for a bias in the momentum reconstruction from a possible misalignment of the detector.
+In simulation the muon energy is smeared in addition to account for resolution effects.
+The uncertainty includes amongst other contributions changing the mass range of the Z peak and a staistical component. The maximum deviations of each contribution are then added in quadrature 
+to obtain the total systematic correction.
+
+The systematic uncertainty on the trigger efficiency measurement is described in Section \ref{sec:TrigSF}. This uncertainty is explicitely correlated in all three dilepton decay channels.
+
+\subsection{Uncertainties Related to Jets}
+
+The uncertainty on correction of the jet energy scale described in Section \todo{Link to reco chapter} contributes to the systematic uncertainties.
+The uncertainty itself is split up into nineteen different sources generally depending on the $\pt$ and $\eta$ of the jet, which are treated as separate uncorrelated nuisance parameters.
+Similar to the nominal correction the uncertainty is applied by rescaling each jet in simulation.
+These sources include a comparison between the differences in the behaviour of jet fragmentation and final state radiation between Pythia6 and Herwig++ \todo{check spelling + cite}.
+They also include uncertainties due to the flavor of the jet again coming from a comparison of Pythia6 and Herwig++.
+Different methods to evaluate the correction of the jets themselves are compared and their difference is used as another uncertainty.
+Other sources of uncertainty are the variation of the response to a single particle in both the hadronic and electromagnetic calorimeter.
+The uncertainty due to the resolution of the jets is split into different regions depending on $\eta$.
+The uncertainty on the estimation of pile-up is taken into account by both applying the uncertainty on the pile-up correction in simulation and comparing simulation with and without added pile-up.
+Finally the depence on the changing conditions during data taking is taken into account by comparing corrections limited to a single run period with the total average.
+
+Jets in simulation also need to be corrected to match the resolution of the jet energy in data \todo{Link}. Similar to the correction itself the uncertainty depends on the $\eta$ of the jet and is
+applied to each jet separately by repeating the resolution correction with a changed scale factor.
+
+The efficiency that a jet originating from a b quark is b-tagged is corrected as explained in Section \todo{Link}. The systematic uncertainty is applied by reweighting the events according to the 
+uncertainty on this efficiency. It generally depends on $\pt$ and $\eta$ of the jet.
+It takes various sources into account like the uncertainty on the simulation of B meson fragmentation, gluon splitting and further meson branching fractions.
+It also considers experimental uncertainties like the impact of the jet energy scale. The uncertainty introduced through pile-up is evaluated by propagating the uncertainty
+on the pile-up determination to the b-tagging efficiency measurement.
+The uncertainty on the probability that a jet originating from a light quark could be b-tagged is treated in a similar way.
+
+\subsection{Further Experimental Uncertainties}
+
+The estimation of pile-up in simulation is corrected according to the assumed pile-up contribution in data. This correction is based on the total inelastic proton-proton cross section.
+A weight is applied to events in simulation depending on the number of primary vertizes. To estimate the systematic uncertainty of this correction the total proton-proton cross section is changed
+by $4.6 \; \%$ and new correction factors are estimated based on the changed value.
+
+The luminosity is determined by extrapolating the result of a measurement \todo{cite} of the luminosity using special proton beam conditions to the full data taking period.
+The uncertainty on the luminosity is determined in a dedicated analysis by both taking into account the uncertainty on the initial measurement itself as welll as uncertainties
+introduced in the extrapolation, mainly through changes in detector or beam conditions.
+This systematic uncertainty is not included as a nuisance parameter in the fit. It is externalised by directly applying it on the final results of the cross section measurement.
+
 \section{Theoretical Uncertainties}
 \label{sec:theo_uncert}
+
+The simulation of the \ttbar signal has a strong impact on the measurement of the \ttbar cross section.
+Since it is based on multiple theoretical assumptions it is important to assess the uncertainty introduced through reasonable variations of these assumptions.
+The systematic uncertainty on the simulation is evaluated by repeating the simulation with changed parameters and then replacing the nominal simulation with the systematic variation.
+
+The \POWHEG algorithm generates \ttbar events at NLO as described in Section \todo{Link}.
+This is an approximation ignoring the impact of higher order contributions. In order to assess the possible impact of these higher orders the renormalization and factorization scales are
+varied. Following convention \todo{cite smth., book from Klaus ?} they are varied by the factors $2$ and $0.5$ resulting in a two-sided variation.
+This variation is given a uniform prior in the cross section measurement, with a value of unity between the $+1 \; \sigma$ and $-1 \; \sigma$ variations and zero everywhere else.
+
+A similar uncertainty is applied to the scale of the calculations in \PYTHIA split between the scale parameter impacting initial state radiation (ISR) and final state radiation (FSR). 
+For the ISR scale the parameter is again varied by a factor of $2$ and $0.5$ respectively. The FSR scale parameter is varied by a factor of $\sqrt{2}$ or $\sqrt{0.5}$, following the results
+of measurements made with LEP data \cite{Skands:2014pea}.
+
+In order to avoid overlap between particles generated in \POWHEG and \PYTHIA the emissions generated in Powheg are damped. The parameter controlling this process is varied within it's uncertainty
+as determined by measurements using data taken by CMS at a center of mass energy of 8 TeV \cite{CMS-PAS-TOP-16-021}.
+Again this nuisance parameter is given a uniform prior.
+
+The simulation of the underlying event is tuned to data measured by CMS \cite{CMS-PAS-TOP-16-021}. The uncertainty from that tuning is propagated to the simulation resulting in a two sided variation.
+This nuisance parameter is given a uniform prior.
+
+Differential measurements of the \ttbar cross section \cite{CMS-PAS-TOP-16-011} have shown that the simulation does not model the \pt of the top quarks to the highest precision.
+This is likely due to higher order effects. In order to model that disagreement a one-sided variation is introduced where simulated events are reweighted according to the \pt of the top.
+This reweighting corrects the simulation to the measurement \cite{CMS-PAS-TOP-16-011}. This nuisance parameter is given a uniform prior.
+
+The uncertainty from the choice of PDF is evaluated using the variations provided by the CT14 PDF set \cite{Dulat:2015mca}. Uncorrelated variations are construced from the central CT14 result using 56 eigenvectors resulting in 28 two sided variations.
+The variations are used at the $68 \;\%$ confidence level. Each of the variations is treated as a separate nuisance parameter.
+Even though the NNPDF 3.0 PDF set is used for the nominal simulation, the uncertainties are not available as eigenvectors in the simulation used for this analysis.
+
+The depence on the model of color reconnection used for the hadronization in \PYTHIA is evaluated by comparing the nominal simulation with three different models \cite{Argyropoulos:2014zoa,Christiansen:2015yqa}. This results in three one-sided variations, where the three nuisance parameters have uniform priors.
+
+
+
+
+
+
+
+
