@@ -114,10 +114,11 @@ Even though the NNPDF 3.0 PDF set is used for the nominal simulation, the uncert
 
 The depence on the model of color reconnection used for the hadronization in \PYTHIA is evaluated by comparing the nominal simulation with three different models \cite{Argyropoulos:2014zoa,Christiansen:2015yqa}. This results in three one-sided variations, where the three nuisance parameters have uniform priors.
 
+The branching ratio of B mesons in \PYTHIA does not exactly agree with the values from the PDG. Especially a semi-leptonic decay of the B meson can have a different detector response introducing an uncertainty on
+the finally reconstructed b-jets. This uncertainty is modelled by reweighting the events so that the branching ratio in simulation agrees with the PDG and the uncertainties on the prediction serve as systematic
+variations. These variations are given a uniform nuisance parameter.
 
-
-
-
-
+The momentum transfer from the b-quark to the B meson (also called fragmentation) is controlled by \PYTHIA and can influence the kinematics of the reconstructed b-jet. The respective parameter is tuned to LEP data and its uncertainty is used as a systematic variation.
+A different fragmentation model is used as an additional one-sided variation. All three variations are given a uniform prior.
 
 
