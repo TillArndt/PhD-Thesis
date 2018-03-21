@@ -132,13 +132,135 @@ being merged into one contribution.
 \end{figure}
 
 The plots show that simulation agrees with the data after applying the fitted parameters.
-The agreement can be expected after a succesfull git, but its still
+The agreement can be expected and shows that the fit succesfully scales simulation to data.
+The simulation is able to model the data within its uncertainties.
 The plotted uncertainties are smaller compared to the plots showing the non-constrained uncertainties in Figure \ref{fig:xsec_emu_inputdistr},\ref{fig:xsec_mumu_inputdistr} and \ref{fig:xsec_ee_inputdistr}.
+This reduction of the uncertainty roughly corresponds to the statistical uncertainty of the data.
+
 
 
 \section{Breakdown of systematic uncertainties}
 \label{sec:results_uncert}
 
+As described in Section \ref{sec:xsec_stat} the results of the fit include the \ttbar cross section value as well as the results for the fitted nuisance parameters.
+For the nuisance parameters a fitted value (also called pull) of $0$ stands for the nominal result, while a value of $\pm 1$ stands for the $\pm 1 \; \sigma$ variation.
+The impact of each of the nuisance parameters on the cross section is estimated by fixing one nuisance parameter to the nominal value and repeating the fit.
+The reduction in the resulting uncertainty on the cross section is then considered as the contribution of that single uncertainty. This calculation does not consider correlations between multiple uncertainties,
+so the quadratic sum of the contributions of all uncertainties does not correspond to the total uncertainty.
+
+Table \ref{tab:lh_res_eightfull} shows the results for the pulls of the nuisance parameters, their constraints and the impact on the cross section.
+It also shows the result for the cross section itself and for the extrapolation of the full to the visible phase space including the extrapolation of the relevant uncertainties.
+
+\begin{longtable}{ l | c | c | c }%[htbp!]
+%\center
+\caption{Extracted cross sections with detailed
+  list of uncertainties. Besides the contribution to the total
+  uncertainty in \%, the fitted value of the nuisance parameter (pull), as well as the ratio of the estimated
+  uncertainty over the uncertainty from a 1 $\sigma$ variation, called
+  constr/$\sigma$, are shown. 
+  \label{tab:lh_res_eightfull}}\\
+\hline
+Name & Pull & Constr / $\sigma$ & Contribution [\%] \\ 
+\hline
+\endfirsthead
+\hline
+Name & Pull & Constr / $\sigma$ & Contribution [\%] \\ 
+\hline
+\endhead
+\input{Results/Figures/FitPlots/xsecFit_tab13TeV.tex}
+\end{longtable}
+
+The results for the lepton (electron and muon) ID uncertainties can be described together as they are highly correlated.
+As described in Section \ref{sec:xsec_templates} the higher of the two uncertainties (the electron uncertainty) is constrained and
+the lower of the two (the muon uncertainty) is largely unconstrained. Compared to the constraints the values for the pulls 
+are small. The lepton uncertainties have the largest contribution to the total uncertainty from all single uncertainties with about $\sim 2 \; \%$. 
+
+The overall impact of the electron energy resolution uncertainty is small, its pull is close to zero and it is hardly constrained showing
+that the analysis is not sensitive to the effect.
+The electron energy scale uncertainty has a pull to $\sim -1.2$ with a constraint of $\sim 0.6 \; \sigma$, the impact on the total uncertainty however is comparatively small.
+
+The muon energy scale uncertainty (also including resolution effects) does not have any large impact on the analysis, nor is it pulled or constrained.
+
+Since the trigger uncertainty is an overall normalization uncertainty on all templates its size directly propagates to the final uncertainty, but it is neither pulled nor constrained.  
+
+Most of the jet energy scale uncertainties have only little impact on the final uncertainty. They are not constrained to more than $60 \; \%$ of the original uncertainty and the are in the range of $0.3$ or below.
+The one uncertainty deviating from that is the Relative Balance uncertainty, which is also the largest of the uncertainties with respect to the original jets.
+It has the biggest impact of all jet energy scale uncertainties at $0.14 \; \%$ and a pull of $-0.7$ with a constraint of $0.5\; \sigma$.
+
+The jet energy resolution uncertainty has little impact on the uncertainty on the measured cross section. The pull of $\sim 1.1$ is not showing any real tension with the prediction considering the constraint of $0.81 \; \sigma$.
+
+The uncertainty related to the b-tagging efficiency can be constrained to about $0.5 \; \sigma$ since the efficiency itself is determined intrinsically as explained in Section \ref{sec:xsec_stat}.
+The effect on the total uncertainty is comparatively large despite the constraint with about $0.5 \; \%$.
+The nuisance paremeter is fitted to a value of $0.6$ which does not deviate significantly from the nominal value considering the constraint.
+The uncertainty on the rate to b-tag a jet not originating from a b-quark (mistag rate) only has a small impact on the uncertainty of the cross section and it is not significantly constrained.
+
+The uncertainty related to the pile-up contributes about $0.3 \; \%$ to the total uncertainty on the measured cross section. It is hardly constrained  ($0.82 \; \sigma$) and the pull at $0.5$ is consistent with the nominal value.
+This result shows that the cross section measurement is not sensitive to the deviation of the pile up description in simulation shown in Figure \ref{fig:control_var_PU}.
+
+The uncertainty related to the B-hadron decay branching ratio only does not significantly contribute to the uncertainty on the measured cross section. It is slightly constrained to about $0.7 \; \sigma$ and the fitted value of the nuisance parameter is below $0.1$.
+
+The uncertainties related to the B-Hadron fragmentation contribute to the order of $0.7 \; \%$ and $0.3 \; \%$ to the uncertainty of the measured cross section for the model internal uncertainty and for the Peterson model uncertainty respectively.
+Both uncertainties are constrained to the range of $0.4 - 0.6 \; \%$ and the pulls are consistent with the nominal value. 
+Again the constraint shows the sensitivity of the analysis to uncertainties related to b-quarks.
+
+The 28 uncertainty sources for the PDF are related to the uncertainty for the PDF represented in eigenvectors.
+They contribute up to about $0.4 \; \%$ per individual uncertainty source to the uncertainty on the measured cross section. Overall, they are not strongly constrained and the pull hardly differs from the nominal value.
+During the extrapolation of the cross section from the visual to the full phase space the PDF uncertainties contribute again, as described in Section \ref{sec:xsec_extraction}, in the order of $0.8 \; \%$ in total.
+
+The impact of the uncertainty from the reweighting of the \pt of the top quark on the final measured cross section is negligible.
+The fitted results corresponds to the systematic variation. This variation is obtained by correcting the simulation according to a measurement of the differtial top \pt distribution and can consequently
+be expected to describe the measured data better than the nominal variation.
+
+
+\todo{MESCALE with new version}
+
+As shown in Figures \ref{fig:control_var_TT_ISRSCALE} and \ref{fig:control_var_TT_FSRSCALE} the ISR and FSR scale uncertainties affect the template distributions used for the fit.
+The large variations lead to a strong constraint of about $0.2 \; \sigma$ and a contribution to the final uncertainty of $0.6 \;\%$ and $0.3 \; \%$ to for the FSR and ISR scale respectively.
+A uniform distribution is assumed for the behaviour of the nuisance parameter, but the pull is still consistent with the nominal value.
+Both the ISR and FSR scale uncertainties only make small additional contributions to the uncertainty on the extrapolation of the cross section.
+
+The impact of the uncertainty of the matching of matrix element generator and parton shower on the uncertainty of the measured cross section is comparatively small with $0.15 \%$. 
+It is heavily constrained to $0.2 \; \sigma$ and the fitted value for the nuisance parameter is consistent with the nominal value.
+The uncertainty on the underlying event behaves similarly: It impacts the final uncertainty on the order of $0.2 \; \%$ is constrained to $0.26 \; \sigma$ and consistent with the nominal value.
+
+The highest impact from the three uncertainties related to the model of color reconnection contributes $0.14 \; \$$ to the uncertainty on the measured cross section, while the contribution from the other two models is negligible.
+The variation is strongly constrained to about $0.1 \; \sigma$ and the pull is consistent with zero.
+
+Background events containing a W and jets or a \ttbar pair not decaying into two leptons do not significantly contribute to the overall number of events.
+The uncertainty from the variation of the respective cross sections is negligible. The variations are hardly constrained and the pulls are consistent with zero.
+
+Events containing two bosons mostly contain no b-tagged jet, so they do not significantly contribute to the distributions most sensitive to the \ttbar contribution. This results in a contribution of the uncertainty on the di-boson production cross section on the measured \ttbar cross section of $0.2 \; \%$
+The variation of the di-boson production cross section is hardly constrained and the fitted result is consistent with the nominal cross section.
+
+The uncertainty on the production cross section of Drell-Yan events is explicitely decorrelated according to the number of b-tagged jets (corresponding to the event categorisation in the fit).
+Drell-Yan events mostly contribute in the zero b-tag category and the impact on the uncertainty of the measured \ttbar cross section is around $0.4 \; \%$ with a constrained on the variation of $0.36 \; \sigma$ and a pull of zero.
+In the categories with one and two b-jets same flavor events contribute as well which increases the constraint on the Drell-Yan cross section to about $0.2 \; \sigma$, while the impact on the measured \ttbar cross section decreases to $0.17 \; \%$.
+The pull is not consistent with the nominal variation at $0.43$. This tension can be explained since no specific model for Drell-Yan events with additional b-quark radiation is used in the simulation. In that small part of the 
+phase space the prediction can not be expected to be as reliable as for the bulk of Drell-Yan events.      
+
+Events containg a single top quark and a W boson behave very similar to events from \ttbar production. The cross section of tW production is low compared to the cross section of \ttbar production, but due to the similarities between
+both types of events there is still a considerable impact. The uncertainty on the tW production cross section has an impact of about $0.8 \; \%$ on the measured \ttbar cross section.
+The tW production cross section is constrained to $0.46 \; \sigma$ and the fitted result is consistent with the expected value.
+
+\todo{this section needs more structure and consistency}
 
 \section{Comparison to theory predictions and previous results}
 \label{results_comp}
+
+The cross section in the full phase space is found to be:
+\begin{equation}
+\stt  =  \resultxsecmain.
+\end{equation}
+ 
+This result is in agreement with the theoretical prediction for the \ttbar production cross section calculated with the \textsc{Top++} program~\cite{Czakon:2011xx} at NNLO in perturbative QCD, including soft-gluon resummation to the next-to-next-to-leading-log~\cite{Andreev:2017vxu} of :
+\begin{equation}
+\stt = \xsectheo.
+\end{equation}
+
+This measurement is also in agreement with previous CMS measurements of the \ttbar production cross section in the dilepton channel of:
+\todo{TOP-16-005}.
+
+The result is also consistent with the latest measurement from the ATLAS collaboration of :
+\todo{Find ATLAS stuff}.
+
+

@@ -119,7 +119,7 @@ The hatched bands correspond to the statistical uncertainty on the sum of the pr
 The estimation of pile-up (see Section \todo{Link to reco}) in simulation is corrected according to the assumed number of collisions per bunch crossing in data. The number of additional collisions
 in data is calculated for small time periods from the total inelastic proton proton cross section and the instantaneous luminosity in that time period.  
 Events in simulation are reweighted depending on the number of primary vertices. To estimate the systematic uncertainty of this correction the total proton-proton cross section is changed
-by $4.6 \; \%$ based on a measurement by the ATLAS collaboration \ref{Aaboud:2016mmw}. New eventweights are then estimated based on the changed value of the total proton-proton cross section.
+by $4.6 \; \%$ based on a measurement by the ATLAS collaboration \cite{Aaboud:2016mmw}. New eventweights are then estimated based on the changed value of the total proton-proton cross section.
 The impact of these variations is shown in the distribution of the number of primary vertices per event as shown in Figure \ref{fig:control_var_PU}.
 A mismatch between measured data and simulated events is visible in the nominal distribution, but as shown in the left figure, the systematic variations cover this discrapency.
 This can lead to a fit result for the specific nuisance parameter tied to the systematic variation being different from one.
@@ -139,7 +139,7 @@ The hatched bands correspond to the statistical uncertainty on the sum of the pr
 \end{figure}
 
 
-The integrated luminosity is determined by extrapolating the result of a measurement \todo{cite} of the instantaneous luminosity using special proton beam conditions (Van der Meer scan \ref{Zanetti:1357856}) to the full data taking period.
+The integrated luminosity is determined by extrapolating the result of a measurement \todo{cite} of the instantaneous luminosity using special proton beam conditions (Van der Meer scan \cite{Zanetti:1357856}) to the full data taking period.
 The uncertainty on the luminosity is determined in a dedicated analysis by both taking into account the uncertainty on the initial measurement itself as well as uncertainties
 introduced in the extrapolation, mainly through changes in detector or beam conditions.
 The systematic uncertainty on the luminosity is totally independent from the measurement of the \ttbar cross section and the other uncertainties described in this chapter.
@@ -226,7 +226,7 @@ The simulation of the underlying event is tuned to data measured by CMS \cite{CM
 The dependence on the model of color reconnection used for the hadronization in \PYTHIA is evaluated by comparing the nominal simulation with three different models \cite{Argyropoulos:2014zoa,Christiansen:2015yqa}. This results in three one-sided variations.
 
 Differential measurements of the \ttbar cross section \cite{CMS-PAS-TOP-16-011} have shown that the simulation does not fully model the \pt distribution of the top quarks.
-This is likely due to higher order effects as shown by differential NNLO calculations \ref{PhysRevLett.116.082003}. In order to model that disagreement a one-sided variation is introduced where simulated events are reweighted according to the \pt of the top quark with a factor of $\sqrt{SF(t)SF(\bar{t})}$ with $SF(\pT)=e^{0.0615-0.0005\cdot \pT}$.
+This is likely due to higher order effects as shown by differential NNLO calculations \cite{PhysRevLett.116.082003}. In order to model that disagreement a one-sided variation is introduced where simulated events are reweighted according to the \pt of the top quark with a factor of $\sqrt{SF(t)SF(\bar{t})}$ with $SF(\pt)=e^{0.0615-0.0005\cdot \pt}$.
 This reweighting corrects the simulation to the measurement.
 
 The uncertainty from the choice of PDF is evaluated using the variations provided by the CT14 PDF set \cite{Dulat:2015mca}. Uncorrelated variations are constructed from the central CT14 result using 56 eigenvectors resulting in 28 two-sided variations.
@@ -239,8 +239,8 @@ This uncertainty is modelled by reweighting the events so that the branching rat
 variations. These variations are given a uniform nuisance parameter.
 
 The momentum transfer from the b-quark to the B meson (fragmentation function) is controlled by \PYTHIA and can influence the kinematics of the reconstructed b-jet. 
-The default modelling uses the Bowler-Lund model \ref{Bowler1981} with the parameter of $StringZ:rFactB = 0.855$ \ref{Skands:2014pea,CMS-PAS-TOP-16-021}.
+The default modelling uses the Bowler-Lund model \cite{Bowler1981} with the parameter of $StringZ:rFactB = 0.855$ \cite{Skands:2014pea,CMS-PAS-TOP-16-021}.
 The respective parameter is tuned to LEP data and its uncertainty is used as a systematic variation, resulting in $StringZ:rFactB = 0.855^{+0.224}_{-0.157}$.
-The Peterson fragmentation function \ref{PhysRevD.27.105} is used as an additional one-sided variation. 
+The Peterson fragmentation function \cite{PhysRevD.27.105} is used as an additional one-sided variation. 
 
 
