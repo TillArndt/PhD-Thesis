@@ -26,15 +26,19 @@ The scattering amplitude is calculated with a matrix element generator according
 interactions of the partons. The proton substructure is given by a Parton Density Function (PDF) which gives the probability of a given parton to carry a certain momentum fraction 
 at factorisation scale $\mu_F$. The hard interaction itself is calculated depending on the energy fraction of the two partons in the initial state at the so called renormalisation scale $\mu_R$.
 The matrix element generator also simulates the content of the events: The particles in the initial and final states and their kinematic properties.
+This includes the decay of the top quarks and W bosons. 
 
-
-
-
-
-
-
+In this analysis the main generator is \POWHEG{v2} which calculates the production process at NLO. The decay of the top quark is calculated at leading order, but
+spin correlations are taken into account. 
 For the simulation of the \ttbar signal process the scales are chosen as $\mu_R = \mu_F = \sqrt{m_t^2 + \pt^2}$.
-The NNPDF set is chosen to simulate the PDF for 
+The NNPDF set is chosen to simulate the PDF for all simulated processes. \todo{cite}
+
+In the case of \ttbar events the final state particles produced by the matrix element generator are both quarks and leptons.
+The hadronization of the bare quarks and the subsequent decay of the hadrons is simulated with Parton Shower algorithms. The Parton Shower also simulates additional radiation from both initial and final
+state particles taking into account electroweak as well as strong coupling. Parton Shower algorithms generally follow phenomenological models, while relevant parameters controlling the simulation are tuned
+to describe previously measured data. In this analysis the \PYTHIA algorithm with the \todo{cite+tune} tune is used.
+
+
 
 
 
