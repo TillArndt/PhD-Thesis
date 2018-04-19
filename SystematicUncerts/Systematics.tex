@@ -6,23 +6,25 @@
 \chapter{Systematic Uncertainties}
 \label{sec:syst_uncert}
 
-The precision of the measurement of the \ttbar cross section is typically dominated by systematic uncertainties and not by statistic uncertainties.
-In this analysis systematic uncertainties are treated as nuisance parameters in a
+Due to the size of the available dataset, the precision of the measurement of the \ttbar cross section is dominated by systematic uncertainties and not by statistic uncertainties.
+In this analysis, the systematic uncertainties are treated as nuisance parameters in a
 template fit, as described in Chapter \ref{sec:xsec} . The nuisance parameters are determined in-situ allowing to reduce the impact of the systematic variations. 
 Correlations between the variations are taken into account by fitting the nuisance parameters simultaneously.
-The nuisance parameters are usually described by a unit gaussian distribution describing the prior assumptions made about their behaviour.
+The nuisance parameters are usually described by a unit Gaussian distribution describing the prior assumptions made about their behaviour.
 These prior distributions (or priors) can also follow a uniform distribution depending on the specific nuisance parameter.
 
 In this chapter the systematic uncertainties are described in detail starting with the uncertainties due to experimental effects in Section \ref{sec:exp_uncert}.
 The uncertainties based on theoretical assumptions are discussed in Section \ref{sec:theo_uncert}. The treatment of the systematics as nuisance
-parameter and especially the prior that is chosen to model the behaviour of the respective nuisance parameter is discussed as well.
+parameters and especially the priors that are chosen to model the behaviour of the respective nuisance parameter is discussed as well.
 
-Broadly speaking there are two main effects of the systematic uncertainties on the templates: They can affect the normalization of the templates or the shape or both.
-Looking in detail, most uncertainties affect both the shape and the normalization, but some clearly affect one a lot more than the other.
-An uncertainty can affect different categories of events differently than others or affect all events similarly.
-Uncertainty on the normalization of all templates are in general harder to constrain than those affecting the shape of the templates as the normalization of the
-\ttbar template is directly tied to the cross section which is the parameter of interest. This applies especially to uncertainties applying to all events in the same way.
+Broadly speaking there are two ways the systematic uncertainties can change the templates: They can affect the normalization of the templates or the shape or both.
+Looking in detail, most uncertainties affect both the shape and the normalization, but some clearly affect one more than the other.
+An uncertainty can affect separate categories of events differently than others or affect all events similarly.
+Uncertainties on the normalization of all templates are in general harder to constrain than those affecting the shape of the templates as the normalization of the
+\ttbar template is directly tied to the cross section which is the parameter of interest and thus not constrained by a prior. 
 
+All systematic uncertainties are summarised in Tabke \ref{tab:syst_sum}. The summary includes a short summary of the systematic as well as the dominant effect (normalization or shape) and
+the assumed prior.
 
 \section{Experimental Uncertainties}
 \label{sec:exp_uncert}
@@ -100,9 +102,9 @@ template fit.
 
 \begin{figure}[htbp!]
   \begin{center}
-      \resizebox{0.32 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/BTAGH/selected_b-jet_multi_step_8_BTAGH_down.pdf}}
-    \resizebox{0.32 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/BTAGH/selected_b-jet_multi_step_8_nominal.pdf}}
-    \resizebox{0.32 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/BTAGH/selected_b-jet_multi_step_8_BTAGH_up.pdf}}
+      \resizebox{0.48 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/BTAGH/selected_b-jet_multi_step_8_BTAGH_down.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/BTAGH/selected_b-jet_multi_step_8_nominal.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/BTAGH/selected_b-jet_multi_step_8_BTAGH_up.pdf}}
 
 \caption{Multiplicity of b-tagged jets in the \emu channel for the two systematic variations (left,right) and the nominal (middle) b-tagging efficiency.
 The hatched bands correspond to the statistical uncertainty on the sum of the predicted yields. 
@@ -126,9 +128,9 @@ This can lead to a fit result for the specific nuisance parameter tied to the sy
 
 \begin{figure}[htbp!]
   \begin{center}
-    \resizebox{0.32 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/PU/vertex_multiplicity_step_8_PU_down.pdf}}
-    \resizebox{0.32 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/PU/vertex_multiplicity_step_8_nominal.pdf}}
-    \resizebox{0.32 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/PU/vertex_multiplicity_step_8_PU_up.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/PU/vertex_multiplicity_step_8_PU_down.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/PU/vertex_multiplicity_step_8_nominal.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/PU/vertex_multiplicity_step_8_PU_up.pdf}}
 \caption{The number of primary vertices per event in the \emu channel for the two systematic variations (left,right) and the nominal (middle) pile-up corrections.
 The hatched bands correspond to the statistical uncertainty on the sum of the predicted yields. 
         The ratios of the event yield in data to the sum of the predicted yields are
@@ -166,9 +168,9 @@ The $\pt$ of the jets is influenced by the scale and this change of $\pt$ propag
 
 \begin{figure}[htbp!]
   \begin{center}
-     \resizebox{0.32 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/TT_MESCALE/jet_multi_1x_b-jets_step_8_TT_MESCALE_down.pdf}}
-    \resizebox{0.32 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/TT_MESCALE/jet_multi_1x_b-jets_step_8_nominal.pdf}}
-    \resizebox{0.32 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/TT_MESCALE/jet_multi_1x_b-jets_step_8_TT_MESCALE_up.pdf}}
+     \resizebox{0.48 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/TT_MESCALE/jet_multi_1x_b-jets_step_8_TT_MESCALE_down.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/TT_MESCALE/jet_multi_1x_b-jets_step_8_nominal.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/TT_MESCALE/jet_multi_1x_b-jets_step_8_TT_MESCALE_up.pdf}}
 \caption{Number of additional jets for events with one b-tagged jet in the \emu channel for the two systematic variations (left, right) and the nominal \ttbar matrix element scale.
 The hatched bands correspond to the statistical uncertainty on the sum of the predicted yields. 
         The ratios of the event yield in data to the sum of the predicted yields are
@@ -190,9 +192,9 @@ The plots also show a change in general normalisation because events migrate bet
 
 \begin{figure}[htbp!]
   \begin{center}
-      \resizebox{0.32 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/TT_ISRSCALE/jet_multi_1x_b-jets_step_8_TT_ISRSCALE_down.pdf}}
-    \resizebox{0.32 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/TT_ISRSCALE/jet_multi_1x_b-jets_step_8_nominal.pdf}}
-    \resizebox{0.32 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/TT_ISRSCALE/jet_multi_1x_b-jets_step_8_TT_ISRSCALE_up.pdf}}
+      \resizebox{0.48 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/TT_ISRSCALE/jet_multi_1x_b-jets_step_8_TT_ISRSCALE_down.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/TT_ISRSCALE/jet_multi_1x_b-jets_step_8_nominal.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/TT_ISRSCALE/jet_multi_1x_b-jets_step_8_TT_ISRSCALE_up.pdf}}
 \caption{Number of additional jets for events with one b-tagged jet in the \emu channel for the two systematic variations (left, right) and the nominal ISR scale.
 The hatched bands correspond to the statistical uncertainty on the sum of the predicted yields. 
         The ratios of the event yield in data to the sum of the predicted yields are
@@ -204,9 +206,9 @@ The hatched bands correspond to the statistical uncertainty on the sum of the pr
 
 \begin{figure}[htbp!]
   \begin{center}
-      \resizebox{0.32 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/TT_FSRSCALE/jet_multi_1x_b-jets_step_8_TT_FSRSCALE_down.pdf}}
-    \resizebox{0.32 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/TT_FSRSCALE/jet_multi_1x_b-jets_step_8_nominal.pdf}}
-    \resizebox{0.32 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/TT_FSRSCALE/jet_multi_1x_b-jets_step_8_TT_FSRSCALE_up.pdf}}
+      \resizebox{0.48 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/TT_FSRSCALE/jet_multi_1x_b-jets_step_8_TT_FSRSCALE_down.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/TT_FSRSCALE/jet_multi_1x_b-jets_step_8_nominal.pdf}}
+    \resizebox{0.48 \textwidth}{!}{\includegraphics{SystematicUncerts/Figures/variationPlots/controlPlots/TT_FSRSCALE/jet_multi_1x_b-jets_step_8_TT_FSRSCALE_up.pdf}}
 \caption{Number of additional jets for events with one b-tagged jet in the \emu channel for the two systematic variations (left, right) and the nominal FSR scale.
 The hatched bands correspond to the statistical uncertainty on the sum of the predicted yields. 
         The ratios of the event yield in data to the sum of the predicted yields are
@@ -242,5 +244,43 @@ The momentum transfer from the b-quark to the B meson (fragmentation function) i
 The default modelling uses the Bowler-Lund model \cite{Bowler1981} with the parameter of $StringZ:rFactB = 0.855$ \cite{Skands:2014pea,CMS-PAS-TOP-16-021}.
 The respective parameter is tuned to LEP data and its uncertainty is used as a systematic variation, resulting in $StringZ:rFactB = 0.855^{+0.224}_{-0.157}$.
 The Peterson fragmentation function \cite{PhysRevD.27.105} is used as an additional one-sided variation. 
+
+\section{Summary}
+
+\begin{table}[htbp!]
+\begin{center}
+\caption{Table of the systematic uncertainties giving the name of the systematic as well as a short summary.
+The dominant effect of the systematic uncertainty describes whether it has more of an effect on the shape or on the normalization.
+The prior describes the chosen probability density function for the nuisance parameter.~\label{tab:syst_sum}}
+\begin{tabular}{l|l|l|l}
+Uncertainty                           & Dominant Effect    & Prior    &   Short description                  \\
+\hline
+\multicolumn{4}{l}{Experimental Uncertainties}                                                     \\
+\hline
+Electron efficiency                   & Normalization      & Gaussian & $0.5\%-2\%$  on electron scale factor \\
+Muon efficiency                       & Normalization      & Gaussian & $1.25\%$ on muon scale factor  \\
+Electron energy                       & Shape              & Gaussian & $\leq 0.5\%$ on electron energy \\
+Muon energy                           & Shape              & Gaussian & $0.05\%-0.2\%$ on muon energy \\
+Trigger efficiency                    & Normalization      & Gaussian & $\leq 0.5\%$ on trigger scale factor \\
+Jet energy scale (JES)                & Shape              & Gaussian & 19 sources, $1\%-2\%$ total \\
+Jet energy resolution (JER)           & Shape              & Gaussian & $1\%-5\%$ on resolution        \\
+b-tagging efficiency                  & Shape              & Gaussian & $2\%-6\%$ on scale factor      \\
+Pile-up                               & Shape              & Gaussian & $4.6\%$ on inelastic pp cross section \\
+Luminosity                            & Normalization      & Gaussian & $2.6\%$ on integrated luminosity \\
+\hline
+\multicolumn{4}{l}{Theoretical Uncertainties}                                                     \\
+\hline
+Matrix element scale                  & Shape              & Uniform  & $\times 2\setminus0.5$ variation of $\mu_R\setminus\mu_F$ \\ 
+ISR scale                             & Shape              & Uniform  & $\times 2\setminus0.5$ variation of ISR scale \\
+FSR scale                             & Shape              & Uniform  & $\times \sqrt{2}\setminus\sqrt{0.5}$ variation of ISR scale \\ 
+Matching                              & Shape              & Gaussian & $h_{damp} = 1.58^{+0.66}_{-0.59} m_t$ in \POWHEG \\
+Color Reconnection                    & Shape              & Gaussian & 3 models, one sided \\
+Top \pt                               & Shape              & Uniform  & $SF(\pt)=e^{0.0615-0.0005\cdot \pt}$ one sided \\
+PDF                                   & Shape              & Gaussian & 56 Eigenvectors from CT14 \\
+B Meson BR                            & Shape              & Uniform  & semi leptonic br reweighted to PDG value \\
+B Meson fragmentation                 & Shape              & Gaussian & $StringZ:rFactB = 0.855^{+0.224}_{-0.157}$ in \PYTHIA \\
+\end{tabular}
+\end{center}
+\end{table}
 
 
