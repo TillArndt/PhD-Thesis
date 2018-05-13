@@ -980,16 +980,27 @@ wish to left align your text}
 % The declaration environment puts a large, bold, centered
 % "Declaration" label at the top of the page.
 
-\newenvironment{declaration}{
-\cleardoublepage
-\setsinglecolumn
-\chapter*{\centering \Large Declaration}
-\thispagestyle{empty}
-}{
-\flushright
-\@author{}\\
-\@degreedate{}
-\vfill
+%\newenvironment{declaration}{
+%\cleardoublepage
+%\setsinglecolumn
+%\chapter*{\centering \Large Declaration}
+%\thispagestyle{empty}
+%}{
+%\flushright
+%\@author{}\\
+%\@degreedate{}
+%\vfill
+%}
+
+\newenvironment{declaration}{ 
+\cleardoublepage 
+\setsinglecolumn 
+\thispagestyle{empty} 
+%\setsinglecolumn 
+%\chapter*{\centering \large Declaration} 
+%\thispagestyle{empty} 
+}{ 
+%Hamburg, April 2018\hspace{6.5cm}\@author{} 
 }
 
 
@@ -1100,13 +1111,25 @@ wish to left align your text}
   \end{center}
 \else
 % Normal abstract in the thesis
-  \cleardoublepage
   \setsinglecolumn
   \chapter*{\centering \Large Abstract}
-  \thispagestyle{empty}
+  %\thispagestyle{empty}
 \fi
 }
 
+
+\newenvironment{zusammenfassung} { \ifPHD@abstract % Separate abstract as per Student Registry guidelines 
+\thispagestyle{empty} 
+\setsinglecolumn 
+\begin{center} 
+{ \Large {\bfseries {\@title}} \par} 
+{{\large \vspace*{1em} \@author} \par} 
+\end{center} 
+\else % Normal abstract in the thesis 
+\setsinglecolumn 
+\chapter*{\centering \Large Zusammenfassung} 
+%\thispagestyle{empty} 
+\fi }
 
 % ******************** To compute empty space in title page *******************
 % Boxes below are used to space different contents on the title page

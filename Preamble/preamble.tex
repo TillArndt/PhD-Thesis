@@ -56,7 +56,7 @@
 %\RequirePackage[small,bf]{caption}
 
 \RequirePackage[labelsep=space,tableposition=top]{caption}
-\renewcommand{\figurename}{Fig.} %to support older versions of captions.sty
+\renewcommand{\figurename}{Figure} %to support older versions of captions.sty
 
 
 % *************************** Graphics and figures *****************************
@@ -118,7 +118,7 @@
 
 % If you would like to use biblatex for your reference management, as opposed to the default `natbibpackage` pass the option `custombib` in the document class. Comment out the previous line to make sure you don't load the natbib package. Uncomment the following lines and specify the location of references.bib file
 
-%\RequirePackage[backend=biber, style=numeric-comp, citestyle=numeric, sorting=nty, natbib=true]{biblatex}
+%\RequirePackage[style=numeric-comp, citestyle=numeric, sorting=none, natbib=true]{biblatex}
 %\bibliography{References/references} %Location of references.bib only for biblatex
 
 \fi
@@ -253,11 +253,11 @@
 \newcommand{\met} {\ensuremath{E\!\!\!\!/_T}}
 \renewcommand{\MET}{\mbox{$\not \!\! E_T$}}
 \newcommand{\pythia}{{\sc{Pythia}}}
-\renewcommand{\ttbar}{\ensuremath{t\bar{t}}\xspace}
+\renewcommand{\ttbar}{\ensuremath{\mathrm{t}\bar{\mathrm{t}}\xspace}}
 \newcommand{\invpb}{pb$^{-1}$}
 \newcommand{\geVcc}{GeV}
 \providecommand{\ee}{\ensuremath{ee}\xspace}
-\newcommand{\emu}{\ensuremath{\mathrm{e}\mu}\xspace}
+\newcommand{\emu}{\ensuremath{\mathrm{e}^\pm\mu^\mp}\xspace}
 \newcommand{\mev}{\ensuremath{\mathrm{\;MeV}}\xspace}
 \newcommand{\tev}{\ensuremath{\mathrm{\;TeV}}\xspace}
 \newcommand{\mevc}{\ensuremath{\mathrm{\;MeV}}\xspace}
@@ -266,9 +266,9 @@
 \newcommand{\mevcc}{\ensuremath{\mathrm{\;MeV}}\xspace}
 \newcommand{\gevcc}{\ensuremath{\mathrm{\;GeV}}\xspace}
 %%% analysis results 
-\newcommand{\resultxsecmain}{\ensuremath{842 \pm  2 ({\rm stat}) \pm 22 ({\rm syst}) \pm 21 ({\rm lumi}) \pb}\xspace}
-\newcommand{\resultxsecvismain}{\ensuremath{21.00 \pm 0.04 ({\rm stat}) \pm 0.53 ({\rm syst}) \pm 0.52({\rm lumi})\pb}\xspace}
-\newcommand{\uncertaintytotmain}{\ensuremath{21 \pb~(3.55\%)}\xspace}
+\newcommand{\resultxsecmain}{\ensuremath{827 \pm  2 ({\rm stat}) \pm 24 ({\rm syst}) \pm 21 ({\rm lumi}) \pb}\xspace}
+\newcommand{\resultxsecvismain}{\ensuremath{24.88 \pm 0.05({\rm stat}) \pm 0.65 ({\rm syst}) \pm 0.62({\rm lumi})\pb}\xspace}
+\newcommand{\uncertaintytotmain}{\ensuremath{32 \pb~(3.83\%)}\xspace}
 \newcommand{\xsectheo}{\ensuremath{ 832 \pm^{20}_{29} {\rm (scale)} \pm 35({\rm PDF}+\alpha_s) \pb}\xspace}
 
 \newcommand{\lumiv}{35.9 fb$^{-1}$}
@@ -277,10 +277,65 @@
 \newcommand{\as}{\ensuremath{\alpha_\mathrm{S}}\xspace}
 \newcommand{\asq}{\ensuremath{\alpha_\mathrm{S}(Q)}\xspace}
 \newcommand{\asmz}{\ensuremath{\alpha_\mathrm{S}(m_Z)}\xspace}
-\newcommand{\mur}{\ensuremath{\mu_\mathrm{r}}\xspace}
-\newcommand{\muf}{\ensuremath{\mu_\mathrm{f}}\xspace}
+\newcommand{\mur}{\ensuremath{\mu_\mathrm{R}}\xspace}
+\newcommand{\muf}{\ensuremath{\mu_\mathrm{F}}\xspace}
 \newcommand{\stt}{\ensuremath{\sigma_\mathrm{t\bar{t}}}\xspace}
 \newcommand{\msbar}{\ensuremath{\mathrm{\overline{MS}}}\xspace}
 \newcommand{\mtmt}{\ensuremath{m_\mathrm{t}(m_\mathrm{t})}\xspace}
 \newcommand{\mtp}{\ensuremath{m_\mathrm{t}^{\mathrm{pole}}}\xspace}
+\newcommand{\mtMC}{\ensuremath{m_\mathrm{t}^{\mathrm{MC}}}\xspace}
 
+ \renewcommand{\maketitle}{
+ \begin{titlepage}
+
+   \thispagestyle{empty}
+   \begin{center}
+     \null
+     {\huge \bf XXXXX\\}
+    
+     \vspace{2.1cm}
+    
+     {\Large \bf Dissertation\\}
+    
+     \vspace{0.2cm}
+     {\large
+       zur Erlangung des Doktorgrades\\
+       an der Fakult\"{a}t f\"{u}r Mathematik, Informatik und Naturwissenschaften\\
+       Fachbereich Physik\\
+       der Universit\"{a}t Hamburg\\
+       \vspace{2.0cm}
+       vorgelegt von\\
+       \vspace{0.5cm}
+       {\Large \textsc{Till Arndt}\\
+         \normalsize aus Frankfurt}
+       \vspace{0.2cm}
+      
+       \vspace{2.6cm}
+      
+       Hamburg\\
+       2018\\
+      } 
+   \end{center}
+      \newpage
+      \thispagestyle{empty}
+      \null
+      \vfill
+      \hspace{-0.5cm}
+      \begin{tabular}{ll}
+        Gutachter der Dissertation: & Dr. Andreas Meyer\\
+                                       & Prof. Dr. Johannes Haller\\[3mm]
+        Zusammensetzung der Pr\"{u}fungskommission: 
+        & Prof. Dr. Caren Hagner\\
+        & Prof. Dr. Gudrid Moortgat-Pick \\
+        & Prof. Dr. Johannes Haller\\
+        & Dr. Andreas Meyer\\
+        & Dr. Roberval Walsh\\[3mm]
+        Vorsitzender der Pr\"{u}fungskommission: & Prof. Dr. Caren Hagner\\[3mm]
+        Datum der Disputation: & 15.07.2018\\[3mm]
+        Vorsitzender Fach-Promotionsausschusses PHYSIK: & Prof. Dr. Wolfgang Hansen\\[3mm]
+        Leiter des Fachbereichs PHYSIK: & Prof. Dr. Michael Potthoff\\[3mm]
+        Dekan der Fakult\"{a}t MIN: & Prof. Dr. Heinrich Graener\\     
+      \end{tabular}
+
+ \end{titlepage}
+ }
